@@ -1,12 +1,32 @@
 // import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // const axios = require('axios');
+import '../Styles/Home.css';
+import Nav from './Nav';
 
 const Home = () => {
   return (
-    <div>
-      <h1> Home Page</h1>
-      <p> List of most voted reviews</p>
+    <div className='home'>
+      <Nav className='nav' />
+      <div className='menubar'>
+        <Link to='/categories'>
+          <p className='menubar__categories'> categories</p>
+        </Link>
+        <Link to='/users'>
+          <p className='menubar__users'> our fans</p>
+        </Link>
+        <Link to='/reviews'>
+          <p className='menubar__reviews'> all reviews</p>
+        </Link>
+      </div>
+      <p> Search Bar</p>
+
+      <p> most voted reviews...</p>
+      <ul>
+        <li> Review 1 </li>
+        <li> Review 2 </li>
+        <li> Review 3 </li>
+      </ul>
     </div>
   );
 };

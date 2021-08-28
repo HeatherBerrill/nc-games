@@ -1,4 +1,4 @@
-import '../App.css';
+import '../Styles/App.css';
 import { Switch, Route } from 'react-router-dom';
 import Categories from './Categories';
 import Home from './Home';
@@ -10,14 +10,11 @@ import CreateReview from './Create-review';
 import SingleReview from './Single-review';
 import Nav from './Nav';
 import Footer from './Footer';
-import Social from './Social';
 import Menu from './Menu';
 
 function App() {
   return (
-    <div className='App'>
-      <h1> In app</h1>
-
+    <div className='app'>
       <Nav />
       <Footer />
       <Menu />

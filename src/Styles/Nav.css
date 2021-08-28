@@ -1,0 +1,14 @@
+.nav {
+  border: 2px solid rgb(190, 12, 137);
+}
+
+.logo {
+  height: 200px;
+  width: auto;
+}
+
+.nav_social {
+  height: 2rem;
+  width: auto;
+  opacity: 0;
+}

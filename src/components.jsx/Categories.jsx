@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 // const axios = require('axios');
+import '../Styles/Categories.css';
 
 const Categories = () => {
   return (

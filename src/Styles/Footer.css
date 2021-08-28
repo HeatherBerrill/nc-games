@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgb(134, 6, 31);
+  position: absolute;
+  bottom: 0;
+}
+
+.footer_social {
+  opacity: 0;
+}
