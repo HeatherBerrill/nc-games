@@ -6,7 +6,7 @@ import '../Styles/Social.css';
 const Social = () => {
   return (
     <div className='social'>
-      <h1> Social Icons</h1>
+      <p> Social Icons</p>
     </div>
   );
 };

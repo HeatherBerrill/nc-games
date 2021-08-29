@@ -1,14 +1,46 @@
 .nav {
-  border: 2px solid rgb(190, 12, 137);
+  display: grid;
+  /* width: 100vw;
+  height: auto; */
+  grid-template-columns: 40% 20% 40%;
+  grid-template-rows: auto 50px;
+  grid-template-areas:
+    'logo logo logo'
+    'links menu social';
 }
 
 .logo {
-  height: 200px;
+  height: 80px;
   width: auto;
 }
 
+.logo_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: logo;
+  background-color: rgb(155, 2, 2);
+}
+
 .nav_social {
-  height: 2rem;
-  width: auto;
-  opacity: 0;
+  grid-area: social;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: rgb(155, 2, 2);
+  margin: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  grid-area: links;
+  background-color: rgb(255, 255, 255);
+}
+.link {
+  color: black;
+}
+.nav_link {
+  text-decoration: none;
 }

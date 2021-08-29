@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom';
 import Social from './Social';
 import Menu from './Menu';
 import '../Styles/Nav.css';
-
+import logo from '../Images/dice.png';
 const Nav = () => {
   return (
     <div className='nav'>
-      <img src='../../Images/dice.png' className='logo' alt='logo'></img>
-      <Link to='/'>
-        <h3> Home</h3>
-      </Link>
-      <Link to='/login'>
-        <h3> Login </h3>
-      </Link>
+      <div className='logo_box'>
+        <img src={logo} className='logo' alt='logo'></img>
+      </div>
+      <div className='links'>
+        <Link to='/' className='nav_link'>
+          <p className='link'> Home</p>
+        </Link>
+        <Link to='/login' className='nav_link'>
+          <p className='link'> Login </p>
+        </Link>
+      </div>
+      <Menu className='menu' />
       <Social className='nav_social' />
       <Menu />
     </div>

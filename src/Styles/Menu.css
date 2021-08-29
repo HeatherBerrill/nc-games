@@ -1,4 +1,11 @@
 .menu {
   border: 2px solid rgb(5, 112, 62);
+}
+
+.placeholder {
+  background-color: darkgreen;
+}
+
+.menu-page {
   opacity: 0;
 }
