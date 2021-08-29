@@ -8,16 +8,16 @@ import Login from './Login';
 import SingleCategory from './Single-category';
 import CreateReview from './Create-review';
 import SingleReview from './Single-review';
-// import Nav from './Nav';
-// import Footer from './Footer';
-// import Menu from './Menu';
+import Nav from './Nav';
+import Footer from './Footer';
+import Menu from './Menu';
 
 function App() {
   return (
     <div className='app'>
-      {/* <Nav />
+      <Nav />
       <Footer />
-      <Menu /> */}
+      <Menu />
 
       <Switch>
         <Route exact path='/'>

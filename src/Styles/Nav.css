@@ -1,9 +1,12 @@
 .nav {
   display: grid;
-  /* width: 100vw;
-  height: auto; */
+  background-color: white;
+  width: 100vw;
+  height: 22vh;
+  top: 0;
+  position: absolute;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 50px;
+  grid-template-rows: auto 15%;
   grid-template-areas:
     'logo logo logo'
     'links menu social';
@@ -24,11 +27,11 @@
 
 .nav_social {
   grid-area: social;
+  background-color: rgb(255, 255, 255);
 }
 
 .menu {
   grid-area: menu;
-  background-color: rgb(155, 2, 2);
   margin: 20px;
 }
 

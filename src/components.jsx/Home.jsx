@@ -2,14 +2,11 @@
 import { Link } from 'react-router-dom';
 // const axios = require('axios');
 import '../Styles/Home.css';
-import Nav from './Nav';
 import Search from './Search';
-import Footer from './Footer';
 
 const Home = () => {
   return (
-    <div className='home'>
-      <Nav className='nav' />
+    <section className='home'>
       <div className='menubar'>
         <Link to='/categories' className='menubar_link'>
           <p className='menubar_item menubar__categories'> categories</p>
@@ -30,8 +27,7 @@ const Home = () => {
           <li> Review 3 </li>
         </ul>
       </div>
-      <Footer />
-    </div>
+    </section>
   );
 };
 

@@ -1,28 +1,20 @@
 .home {
+  position: absolute;
+  background-color: rgb(212, 212, 212);
   display: grid;
   width: 100vw;
-  height: 100vh;
-  grid-template-columns: 100wv;
-  grid-template-rows: 160px 50px 50px auto 50px;
+  height: 68vh;
+  top: 25vh;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15% 15% 55%;
   grid-template-areas:
-    'nav'
     'menubar'
     'search'
-    'reviews_list'
-    'footer';
+    'reviews_list';
 }
 
-.nav {
-  grid-area: nav;
-  /* position: absolute; */
-  /* top: 0; */
-  /* background-color: rgb(67, 26, 105); */
-  height: 10rem;
-  width: 100vw;
-}
 .menubar {
   grid-area: menubar;
-  top: 10rem;
   height: 3rem;
   width: 100vw;
 
@@ -31,8 +23,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
-  /* padding: 2rem; */
 }
 
 .menubar_link {
@@ -53,8 +43,8 @@
   padding-left: 10px;
 }
 
-.menubar__users {
-}
+/* .menubar__users {
+} */
 
 .search {
   grid-area: search;
@@ -62,9 +52,4 @@
 
 .reviews_list {
   grid-area: reviews_list;
-  background-color: rgb(240, 206, 213);
-}
-
-.footer {
-  grid-area: footer;
 }

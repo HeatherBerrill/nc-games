@@ -21,7 +21,6 @@ const Nav = () => {
       </div>
       <Menu className='menu' />
       <Social className='nav_social' />
-      <Menu />
     </div>
   );
 };

@@ -1,9 +1,30 @@
 .categories {
-  border: 2px solid blue;
-  /* display: grid; */
-  /* grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 50px;
+  width: 90vw;
+  height: 64vh;
+  top: 25vh;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  display: grid;
+  margin: 1rem;
+  text-align: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15% auto 25%;
+  justify-content: center;
+
   grid-template-areas:
-    'logo logo logo'
-    'links menu social' */
+    'categories-title'
+    'categories-list'
+    'form';
+}
+.cat_title {
+  grid-area: categories-title;
+}
+.cat_form {
+  padding-left: 3rem;
+  grid-area: form;
+  width: 70vw;
+}
+
+.cat_list {
+  grid-area: categories-list;
 }
