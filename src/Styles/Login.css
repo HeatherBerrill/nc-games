@@ -1,3 +1,27 @@
 /* .login {
   border: 2px solid rgb(172, 5, 116);
 } */
+.login {
+  width: 90vw;
+  height: 64vh;
+  top: 25vh;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  display: grid;
+  margin: 1rem;
+  text-align: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15% auto;
+  justify-content: center;
+
+  grid-template-areas:
+    'login-title'
+    'login-form';
+}
+.login__title {
+  grid-area: login-title;
+}
+
+.login__form {
+  grid-area: login-form;
+}

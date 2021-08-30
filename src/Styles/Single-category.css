@@ -1,3 +1,39 @@
 /* .single-category {
   border: 2px solid rgb(14, 174, 196);
 } */
+.single-category {
+  width: 90vw;
+  height: 64vh;
+  top: 25vh;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  display: grid;
+  margin: 1rem;
+  text-align: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: 45% auto;
+  justify-content: center;
+
+  grid-template-areas:
+    'category-content'
+    'reviews-list';
+}
+.single-category__content {
+  grid-area: category-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.single-category__reviews-list {
+  grid-area: reviews-list;
+}
+.single-category__description {
+  font-size: 0.75rem;
+  text-align: left;
+  margin: 1rem;
+}
+
+.single-category__title {
+  text-align: left;
+}

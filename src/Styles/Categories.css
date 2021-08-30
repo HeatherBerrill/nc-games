@@ -16,15 +16,15 @@
     'categories-list'
     'form';
 }
-.cat_title {
+.cat__title {
   grid-area: categories-title;
 }
-.cat_form {
+.cat__form {
   padding-left: 3rem;
   grid-area: form;
   width: 70vw;
 }
 
-.cat_list {
+.cat__list {
   grid-area: categories-list;
 }

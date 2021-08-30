@@ -11,6 +11,7 @@ import SingleReview from './Single-review';
 import Nav from './Nav';
 import Footer from './Footer';
 import Menu from './Menu';
+import Reviews from './Reviews';
 
 function App() {
   return (
@@ -44,12 +45,16 @@ function App() {
           <SingleCategory />
         </Route>
 
-        <Route exact path='/create-review'>
+        <Route exact path='/reviews/create-review'>
           <CreateReview />
         </Route>
 
         <Route exact path='/reviews/:review_id'>
           <SingleReview />
+        </Route>
+
+        <Route exact path='/reviews'>
+          <Reviews />
         </Route>
       </Switch>
     </div>

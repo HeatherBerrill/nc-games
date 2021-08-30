@@ -8,18 +8,18 @@ const Home = () => {
   return (
     <section className='home'>
       <div className='menubar'>
-        <Link to='/categories' className='menubar_link'>
-          <p className='menubar_item menubar__categories'> categories</p>
+        <Link to='/categories' className='menubar__link'>
+          <p className='menubar__item menubar__categories'> categories</p>
         </Link>
-        <Link to='/users' className='menubar_link'>
-          <p className='menubar_item menubar__users'> our fans</p>
+        <Link to='/reviews' className='menubar__link'>
+          <p className='menubar__item menubar__reviews'> all reviews</p>
         </Link>
-        <Link to='/reviews' className='menubar_link'>
-          <p className='menubar_item menubar__reviews'> all reviews</p>
+        <Link to='/users' className='menubar__link'>
+          <p className='menubar__item menubar__users'> our fans</p>
         </Link>
       </div>
       <Search className='search' />
-      <div className='reviews_list'>
+      <div className='reviews__list'>
         <p> most voted reviews...</p>
         <ul>
           <li> Review 1 </li>

@@ -1,7 +1,4 @@
-/* .users {
-  border: 2px solid rgb(5, 73, 105);
-} */
-.users {
+.reviews {
   width: 90vw;
   height: 64vh;
   top: 25vh;
@@ -15,20 +12,20 @@
   justify-content: center;
 
   grid-template-areas:
-    'users-title'
-    'users-list'
+    'reviews-title'
+    'reviews-list'
     'button';
 }
-.users__title {
-  grid-area: users-title;
+.reviews__title {
+  grid-area: reviews-title;
 }
-.users__btn {
+.reviews__btn {
   grid-area: button;
   padding-left: 3rem;
   grid-area: form;
   width: 70vw;
 }
 
-.users__list {
-  grid-area: users-list;
+.reviews__list {
+  grid-area: reviews-list;
 }

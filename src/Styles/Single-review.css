@@ -1,3 +1,50 @@
 /* .single-review {
   border: 2px solid rgb(13, 82, 1);
 } */
+/* .login {
+  border: 2px solid rgb(172, 5, 116);
+} */
+.single-review {
+  width: 90vw;
+  height: 64vh;
+  top: 25vh;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  display: grid;
+  margin: 1rem;
+  text-align: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: 3rem 45% auto;
+  justify-content: center;
+
+  grid-template-areas:
+    'single-review-title '
+    'single-review-content'
+    'single-review-comments';
+}
+.single-review__title {
+  margin: 1rem;
+  grid-area: single-review-title;
+}
+
+.single-review__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  font-size: 0.5rem;
+  grid-area: single-review-content;
+}
+
+.single-review__comments-list {
+  grid-area: single-review-comments;
+}
+
+.review-image__box {
+  height: 3rem;
+  width: 7rem;
+  background-color: cornsilk;
+}
+
+.single-review__description {
+  text-align: left;
+}
