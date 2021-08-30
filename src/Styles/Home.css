@@ -6,17 +6,17 @@
   height: 68vh;
   top: 25vh;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% 15% 55%;
+  grid-template-rows: 15% 15% 60%;
   grid-template-areas:
     'menubar'
     'search'
-    'reviews_list';
+    'home-reviews-list';
 }
 
 .menubar {
   grid-area: menubar;
   height: 3rem;
-  width: 100vw;
+  /* width: 100vw; */
 
   background-color: rgb(155, 2, 2);
   display: flex;
@@ -50,7 +50,7 @@
   grid-area: search;
 }
 
-.reviews__list {
+.home__reviews-list {
   text-align: center;
-  grid-area: reviews_list;
+  grid-area: home-reviews-list;
 }

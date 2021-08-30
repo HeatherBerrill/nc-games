@@ -1,6 +1,6 @@
 .reviews {
   width: 90vw;
-  height: 64vh;
+  height: auto;
   top: 25vh;
   background-color: rgb(212, 212, 212);
   position: absolute;
@@ -13,6 +13,7 @@
 
   grid-template-areas:
     'reviews-title'
+    'sort-form'
     'reviews-list'
     'button';
 }
@@ -28,4 +29,13 @@
 
 .reviews__list {
   grid-area: reviews-list;
+}
+
+.reviews-sort-form {
+  grid-area: sort-form;
+}
+
+.review-list__thumbnail {
+  height: 4rem;
+  width: auto;
 }

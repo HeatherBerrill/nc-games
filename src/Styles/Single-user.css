@@ -1,3 +1,33 @@
-/* .single-user {
-  border: 2px solid rgb(213, 216, 9);
-} */
+.single-user {
+  width: 90vw;
+  height: 64vh;
+  top: 25vh;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  display: grid;
+  margin: 1rem;
+  text-align: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: auto 15%;
+  justify-content: center;
+
+  grid-template-areas:
+    'single-user-content'
+    'single-user-btn';
+}
+.single-user__content {
+  grid-area: single-user-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-btn {
+  grid-area: single-user-btn;
+}
+
+.user-image-box {
+  height: 7rem;
+  width: 7rem;
+  background-color: rgb(255, 255, 255);
+}

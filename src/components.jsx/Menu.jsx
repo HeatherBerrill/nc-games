@@ -1,17 +1,34 @@
 // import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // const axios = require('axios');
-
+import Social from './Social';
 import '../Styles/Menu.css';
 
 const Menu = () => {
   return (
     <div className='menu'>
-      <div className='placeholder'></div>
-      <div className='menu-page'>
-        <h1> Menu Page</h1>
-        <p> List of stuff</p>
-      </div>
+      <Link to='/'>
+        <div className='close__menu'></div>
+      </Link>
+      <h3 className='menu__title'> Menu Page</h3>
+      <ul className='menu__list'>
+        <Link to='/'>
+          <li className='menu__link'> Home </li>
+        </Link>
+        <Link to='/login'>
+          <li className='menu__link'> Login </li>
+        </Link>
+        <Link to='/categories'>
+          <li className='menu__link'> Categories </li>
+        </Link>
+        <Link to='/users'>
+          <li className='menu__link'> Our fans </li>
+        </Link>
+        <Link to='/reviews'>
+          <li className='menu__link'> All reviews </li>
+        </Link>
+      </ul>
+      <Social className='menu__social' />
     </div>
   );
 };

@@ -1,10 +1,9 @@
 // import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// const axios = require('axios');
 import '../Styles/Home.css';
 import Search from './Search';
 
-const Home = () => {
+const Home = ({ reviews }) => {
   return (
     <section className='home'>
       <div className='menubar'>
@@ -19,7 +18,7 @@ const Home = () => {
         </Link>
       </div>
       <Search className='search' />
-      <div className='reviews__list'>
+      <div className='home__reviews-list'>
         <p> most voted reviews...</p>
         <ul>
           <li> Review 1 </li>

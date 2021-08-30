@@ -30,9 +30,11 @@
   background-color: rgb(255, 255, 255);
 }
 
-.menu {
+.menu__icon {
   grid-area: menu;
   margin: 20px;
+  background-color: maroon;
+  height: 1rem;
 }
 
 .links {

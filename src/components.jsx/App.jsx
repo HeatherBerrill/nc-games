@@ -1,5 +1,6 @@
 import '../Styles/App.css';
 import { Switch, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Categories from './Categories';
 import Home from './Home';
 import Users from './Users';
@@ -14,15 +15,16 @@ import Menu from './Menu';
 import Reviews from './Reviews';
 
 function App() {
+  const [reviews, setReviews] = useState([]);
+
   return (
     <div className='app'>
       <Nav />
       <Footer />
-      <Menu />
 
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home reviews={reviews} />
         </Route>
 
         <Route exact path='/users'>
@@ -54,7 +56,11 @@ function App() {
         </Route>
 
         <Route exact path='/reviews'>
-          <Reviews />
+          <Reviews reviews={reviews} setReviews={setReviews} />
+        </Route>
+
+        <Route exact path='/menu'>
+          <Menu />
         </Route>
       </Switch>
     </div>

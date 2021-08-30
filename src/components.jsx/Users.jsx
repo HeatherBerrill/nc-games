@@ -8,7 +8,9 @@ const Users = () => {
     <section className='users'>
       <h1 className='users__title'> Users Page</h1>
       <ul className='users__list'>
-        <li> User 1 </li>
+        <Link to='/users/:username'>
+          <li> User 1 </li>
+        </Link>
         <li> User 2 </li>
         <li> User 3 </li>
         <li> User 4 </li>

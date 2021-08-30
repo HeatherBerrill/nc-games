@@ -1,11 +1,43 @@
 .menu {
+  position: absolute;
   background-color: rgb(155, 2, 2);
+  display: grid;
+  width: 100vw;
+  height: 68vh;
+  top: 25vh;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15% 15% auto 35%;
+  grid-template-areas:
+    'close-menu'
+    'menu-title'
+    'menu-list'
+    'menu-social';
+  text-align: center;
+  justify-items: center;
 }
 
-/* .placeholder {
-  background-color: darkgreen;
-} */
+.menu__title {
+  color: white;
+  grid-area: menu-title;
+}
 
-.menu-page {
-  opacity: 0;
+.close__menu {
+  height: 1rem;
+  width: 1rem;
+  grid-area: close-menu;
+  background-color: white;
+  margin: 2rem;
+}
+
+.menu__list {
+  grid-area: menu-list;
+}
+
+.menu__social {
+  grid-area: menu-social;
+}
+
+.menu__link {
+  color: white;
+  /* text-align: center; */
 }

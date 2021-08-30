@@ -1,13 +1,19 @@
 // import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // const axios = require('axios');
 import '../Styles/Single-user.css';
 
 const SingleUser = () => {
   return (
     <div className='single-user'>
-      <h1> Single User</h1>
-      <p> Image and name</p>
+      <div className='single-user__content'>
+        <h3> Username</h3>
+        <p> Name: name</p>
+        <div className='user-image-box'> </div>
+      </div>
+      <Link to='/users'>
+        <button className='btn back-btn'> Back </button>
+      </Link>
     </div>
   );
 };

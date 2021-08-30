@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 // const axios = require('axios');
 import Social from './Social';
-import Menu from './Menu';
+
 import '../Styles/Nav.css';
 import logo from '../Images/dice.png';
 const Nav = () => {
@@ -19,7 +19,10 @@ const Nav = () => {
           <p className='link'> Login </p>
         </Link>
       </div>
-      <Menu className='menu' />
+      <Link to='/menu'>
+        <div className='menu__icon'></div>
+      </Link>
+
       <Social className='nav_social' />
     </div>
   );
