@@ -10,17 +10,29 @@ import SingleCategory from './Single-category';
 import CreateReview from './Create-review';
 import SingleReview from './Single-review';
 import Nav from './Nav';
-import Footer from './Footer';
+import { getCategories, getReviews } from '../api';
 import Menu from './Menu';
 import Reviews from './Reviews';
 
 function App() {
   const [reviews, setReviews] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((categories) => {
+      setCategories(categories);
+    });
+  }, []);
+
+  useEffect(() => {
+    getReviews().then((reviews) => {
+      setReviews(reviews);
+    });
+  }, [setReviews]);
 
   return (
     <div className='app'>
       <Nav />
-      <Footer />
 
       <Switch>
         <Route exact path='/'>
@@ -40,11 +52,16 @@ function App() {
         </Route>
 
         <Route exact path='/categories'>
-          <Categories />
+          <Categories categories={categories} setCategories={setCategories} />
         </Route>
 
         <Route exact path='/categories/:slug'>
-          <SingleCategory />
+          <SingleCategory
+            reviews={reviews}
+            setReviews={setReviews}
+            categories={categories}
+            setCategories={setCategories}
+          />
         </Route>
 
         <Route exact path='/reviews/create-review'>

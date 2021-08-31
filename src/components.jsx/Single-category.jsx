@@ -1,17 +1,25 @@
-// import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-// const axios = require('axios');
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import '../Styles/Single-category.css';
+import { getCategoryReviews, getSortedReviews } from '../api';
 
-const SingleCategory = () => {
+const SingleCategory = ({ categories, reviews, setReviews }) => {
+  const { slug } = useParams();
+  const [category, setCategory] = useState({});
+
+  useEffect(() => {
+    getCategoryReviews(slug).then((reviews) => {
+      setReviews(reviews);
+      setCategory(slug);
+    });
+  }, [slug]);
+
   return (
     <div className='single-category'>
       <div className='single-category__content'>
-        <h3 className='single-category__title'> Category Title</h3>
+        <h3 className='single-category__title'> {category.slug}</h3>
         <p className='single-category__description'>
-          Description <br /> "One or more players around the table have a
-          secret, and the rest of you need to figure out who! Players attempt to
-          uncover each other's hidden role"
+          Description <br /> {category.description}
         </p>
         <Link to='/reviews/create-review'>
           <button className='btn reviews__btn'> Add New Review </button>
@@ -19,13 +27,24 @@ const SingleCategory = () => {
       </div>
       <div>
         <ul className='single-category__reviews-list'>
-          <Link to='/reviews/:review_id'>
-            <li> review 1 </li>
-          </Link>
-          <li> review 2 </li>
-          <li> review 3 </li>
-          <li> review 4 </li>
-          <li> review 5 </li>
+          {reviews.map((review) => {
+            return (
+              <li key={review.review_id}>
+                <Link to={`/reviews/${review.review_id}`}>
+                  <button>Read Review</button>
+                </Link>
+                <h3> {review.title} </h3>
+
+                <p> {review.designer} </p>
+                <img
+                  alt={review.title}
+                  className='review-list__thumbnail'
+                  src={review.review_img_url}
+                ></img>
+                <p> votes: {review.votes} </p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

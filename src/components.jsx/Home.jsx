@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
 import Search from './Search';
+import Footer from './Footer';
 
 const Home = ({ reviews }) => {
   return (
@@ -26,6 +27,7 @@ const Home = ({ reviews }) => {
           <li> Review 3 </li>
         </ul>
       </div>
+      <Footer className='home__footer' />
     </section>
   );
 };

@@ -1,31 +1,40 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getReviews } from '../api';
+import { getSortedReviews } from '../api';
 import '../Styles/Reviews.css';
-// import { useParams } from 'react-router-dom';
+
+import Footer from './Footer';
 
 const Reviews = ({ reviews, setReviews }) => {
-  useEffect(() => {
-    getReviews().then((reviews) => {
+  const [newSort, setNewSort] = useState('');
+
+  const sortReviews = (event) => {
+    event.preventDefault();
+    getSortedReviews(newSort).then((reviews) => {
       setReviews(reviews);
     });
-  }, []);
-
-  console.log(reviews);
+  };
 
   return (
     <section className='reviews'>
       <h1 className='reviews__title'> All Reviews </h1>
       <label htmlFor='sort-dropdown'></label>
       <br />
-      <form className='reviews-sort-form'>
-        <select id='sort-dropdown'>
+      <form className='reviews-sort-form' onSubmit={sortReviews}>
+        <select
+          type='dropdown'
+          name='sort'
+          id='sort-dropdown'
+          onChange={(event) => {
+            setNewSort(event.target.value);
+          }}
+        >
           <option defaultValue disabled>
             Choose
           </option>
-          <option> Most recent </option>
-          <option> Most comments </option>
-          <option> Most votes </option>
+          <option value='created_at'> Most recent </option>
+          <option value='category'> Category </option>
+          <option value='votes'> Most voted </option>
         </select>
         <button className='btn sort__btn'> Submit </button>
 
@@ -40,8 +49,10 @@ const Reviews = ({ reviews, setReviews }) => {
             <li key={review.review_id}>
               <h3> {review.category}</h3>
               <Link to={`/reviews/${review.review_id}`}>
-                <h3> {review.title} </h3>
+                <button>Read Review</button>
               </Link>
+              <h3> {review.title} </h3>
+
               <p> {review.designer} </p>
               <img
                 alt={review.title}
@@ -53,6 +64,7 @@ const Reviews = ({ reviews, setReviews }) => {
           );
         })}
       </ul>
+      <Footer className='reviews__footer' />
     </section>
   );
 };

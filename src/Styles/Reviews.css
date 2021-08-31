@@ -8,7 +8,7 @@
   margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% auto 25%;
+  grid-template-rows: 4rem 4rem auto 4rem;
   justify-content: center;
 
   grid-template-areas:

@@ -1,20 +1,31 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// const axios = require('axios');
 import '../Styles/Users.css';
+import { getUsers } from '../api';
 
 const Users = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    getUsers().then((users) => {
+      setUsers(users);
+    });
+  }, []);
+
   return (
     <section className='users'>
       <h1 className='users__title'> Users Page</h1>
       <ul className='users__list'>
-        <Link to='/users/:username'>
-          <li> User 1 </li>
-        </Link>
-        <li> User 2 </li>
-        <li> User 3 </li>
-        <li> User 4 </li>
-        <li> User 5 </li>
+        {users.map((user) => {
+          return (
+            <li key={user.username}>
+              <h3> {user.username}</h3>
+              <Link to={`/users/${user.username}`}>
+                <button>View User</button>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
       <Link to='/login'>
         <button className='btn users__btn'> Login </button>

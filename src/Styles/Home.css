@@ -3,14 +3,15 @@
   background-color: rgb(212, 212, 212);
   display: grid;
   width: 100vw;
-  height: 68vh;
+  height: 75vh;
   top: 25vh;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% 15% 60%;
+  grid-template-rows: 15% 15% auto 4rem;
   grid-template-areas:
     'menubar'
     'search'
-    'home-reviews-list';
+    'home-reviews-list'
+    'footer';
 }
 
 .menubar {
@@ -53,4 +54,10 @@
 .home__reviews-list {
   text-align: center;
   grid-area: home-reviews-list;
+}
+
+.home__footer {
+  grid-area: footer;
+  position: relative;
+  bottom: 0;
 }

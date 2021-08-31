@@ -6,7 +6,7 @@
 } */
 .single-review {
   width: 90vw;
-  height: 64vh;
+  height: auto;
   top: 25vh;
   background-color: rgb(212, 212, 212);
   position: absolute;
@@ -14,7 +14,7 @@
   margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 3rem 45% auto;
+  grid-template-rows: 3rem 10rem auto;
   justify-content: center;
 
   grid-template-areas:
@@ -30,6 +30,7 @@
 .single-review__content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 1rem;
   font-size: 0.5rem;
   grid-area: single-review-content;
@@ -39,9 +40,9 @@
   grid-area: single-review-comments;
 }
 
-.review-image__box {
-  height: 3rem;
-  width: 7rem;
+.review__image {
+  height: 4rem;
+  width: auto;
   background-color: cornsilk;
 }
 

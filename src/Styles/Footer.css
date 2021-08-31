@@ -5,10 +5,10 @@
   padding: 0 20px;
   background-color: rgb(155, 2, 2);
   color: white;
-  position: absolute;
-  bottom: 0px;
+  /* position: absolute; */
+  /* bottom: 0px; */
   width: 100vw;
-  height: 7vh;
+  height: 4rem;
 }
 
 .footer_social {
