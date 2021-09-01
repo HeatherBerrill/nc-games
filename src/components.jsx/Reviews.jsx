@@ -43,7 +43,7 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
             Choose
           </option>
           <option value='created_at'> Most recent </option>
-          <option value='category'> Category </option>
+          <option value='comment_count'> Most Comments </option>
           <option value='votes'> Most voted </option>
         </select>
         <button className='btn sort__btn'> Submit </button>

@@ -24,6 +24,7 @@ function App() {
     avatar_url: 'https://www.tumbit.com/profile-image/4/original/mr-grumpy.jpg',
     name: 'Paul Grump'
   });
+  const [review, setReview] = useState({});
 
   return (
     <div className='app'>
@@ -32,6 +33,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Home
+            setReviews={setReviews}
             reviews={reviews}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
@@ -92,7 +94,12 @@ function App() {
         </Route>
 
         <Route exact path='/reviews/:review_id'>
-          <SingleReview isLoading={isLoading} setIsLoading={setIsLoading} />
+          <SingleReview
+            review={review}
+            setReview={setReview}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/reviews'>

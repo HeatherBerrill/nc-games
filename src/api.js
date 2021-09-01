@@ -41,6 +41,20 @@ export const getUsers = async () => {
 
 export const getSingleUser = async (username) => {
   const { data } = await gamesApi.get(`/users/${username}`);
-  console.log(data.user);
   return data.user;
+};
+
+export const getVotedReviews = async () => {
+  const { data } = await gamesApi.get('/reviews?sortBy=votes&limit=3');
+  return data.reviews;
+};
+
+export const updateVotes = async (review_id, increment) => {
+  console.log(review_id, 'review id');
+  console.log(increment, 'inc');
+  const { data } = await gamesApi.patch(`/reviews/${review_id}`, {
+    inc_votes: increment
+  });
+  console.log(data, 'in api');
+  return data;
 };

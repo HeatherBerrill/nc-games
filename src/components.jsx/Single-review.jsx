@@ -4,10 +4,11 @@ import { getReview, getComments } from '../api';
 import { useParams } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
+import Votes from './Votes';
 
-const SingleReview = ({ isLoading, setIsLoading }) => {
+const SingleReview = ({ review, setReview, isLoading, setIsLoading }) => {
   const { review_id } = useParams();
-  const [review, setReview] = useState({});
+
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -22,11 +23,12 @@ const SingleReview = ({ isLoading, setIsLoading }) => {
     });
   }, [review_id]);
 
+  console.log(review, 'rev');
   if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <div className='single-review'>
-      <h3 className='single-review__title'> {review.title} </h3>
+      <h4 className='single-review__title'> {review.title} </h4>
       <div className='single-review__content'>
         <img
           className='review__image'
@@ -35,7 +37,7 @@ const SingleReview = ({ isLoading, setIsLoading }) => {
         ></img>
         <p className='single-review__description'> {review.review_body}</p>
         <p className='single-review__votes'> review votes : {review.votes} </p>
-        <button className='btn single-review__btn'> Vote </button>
+        <Votes className='single-review__votes' />
       </div>
       <form className='comment__form'>
         <label htmlFor='new-comment'>Add New Comment</label>
@@ -50,7 +52,6 @@ const SingleReview = ({ isLoading, setIsLoading }) => {
                 <h3> {comment.author}</h3>
                 <p> {comment.body} </p>
                 <p> votes: {comment.votes} </p>
-                <button className='btn single-review__btn'> Vote </button>
               </li>
             );
           })}

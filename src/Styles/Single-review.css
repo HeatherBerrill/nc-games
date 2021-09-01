@@ -14,12 +14,13 @@
   margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 3rem 10rem auto;
+  grid-template-rows: 2rem 8rem 5rem auto;
   justify-content: center;
 
   grid-template-areas:
     'single-review-title '
     'single-review-content'
+    'single-review-form'
     'single-review-comments';
 }
 .single-review__title {
@@ -36,8 +37,17 @@
   grid-area: single-review-content;
 }
 
+.comment__form {
+  grid-area: single-review-form;
+}
+
 .single-review__comments-list {
   grid-area: single-review-comments;
+}
+
+.single-review__votes {
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .review__image {
