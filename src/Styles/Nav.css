@@ -6,10 +6,11 @@
   top: 0;
   position: absolute;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 15%;
+  grid-template-rows: auto 15% 10%;
   grid-template-areas:
     'logo logo logo'
-    'links menu social';
+    'links menu social'
+    'links menu login-name';
 }
 
 .logo {
@@ -48,4 +49,9 @@
 }
 .nav_link {
   text-decoration: none;
+}
+
+.login-name {
+  grid-area: login-name;
+  font-size: 0.5rem;
 }

@@ -1,7 +1,7 @@
 /* .login {
   border: 2px solid rgb(172, 5, 116);
 } */
-.login {
+.account {
   width: 90vw;
   height: 64vh;
   top: 25vh;
@@ -11,17 +11,21 @@
   margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% auto;
+  grid-template-rows: 25% 15% auto;
   justify-content: center;
 
   grid-template-areas:
-    'login-title'
-    'login-form';
+    'account-message'
+    'switch-user-message'
+    'switch-user-list';
 }
-.login__title {
-  grid-area: login-title;
+.account__message {
+  grid-area: account-message;
+}
+.switch-user__message {
+  grid-area: switch-user-message;
 }
 
-.login__form {
-  grid-area: login-form;
+.switch-user__list {
+  grid-area: switch-user-list;
 }

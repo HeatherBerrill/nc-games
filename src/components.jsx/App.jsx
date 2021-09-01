@@ -5,7 +5,7 @@ import Categories from './Categories';
 import Home from './Home';
 import Users from './Users';
 import SingleUser from './Single-user';
-import Login from './Login';
+import Account from './Account';
 import SingleCategory from './Single-category';
 import CreateReview from './Create-review';
 import SingleReview from './Single-review';
@@ -19,10 +19,15 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [loginUser, setLoginUser] = useState({
+    username: 'grumpy19',
+    avatar_url: 'https://www.tumbit.com/profile-image/4/original/mr-grumpy.jpg',
+    name: 'Paul Grump'
+  });
 
   return (
     <div className='app'>
-      <Nav />
+      <Nav loginUser={loginUser} setLoginUser={setLoginUser} />
 
       <Switch>
         <Route exact path='/'>
@@ -51,8 +56,15 @@ function App() {
           />
         </Route>
 
-        <Route exact path='/login'>
-          <Login />
+        <Route exact path='/account'>
+          <Account
+            users={users}
+            setUsers={setUsers}
+            loginUser={loginUser}
+            setLoginUser={setLoginUser}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/categories'>

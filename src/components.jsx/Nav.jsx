@@ -1,11 +1,10 @@
 // import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// const axios = require('axios');
 import Social from './Social';
 
 import '../Styles/Nav.css';
 import logo from '../Images/dice.png';
-const Nav = () => {
+const Nav = ({ loginUser }) => {
   return (
     <div className='nav'>
       <div className='logo_box'>
@@ -15,10 +14,11 @@ const Nav = () => {
         <Link to='/' className='nav_link'>
           <p className='link'> Home</p>
         </Link>
-        <Link to='/login' className='nav_link'>
-          <p className='link'> Login </p>
+        <Link to='/account' className='nav_link'>
+          <p className='link'> Account </p>
         </Link>
       </div>
+      <p className='login-name'> You are logged in as {loginUser.username}</p>
       <Link to='/menu'>
         <div className='menu__icon'></div>
       </Link>
