@@ -5,23 +5,24 @@ import { useParams } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
 
-const SingleReview = () => {
+const SingleReview = ({ isLoading, setIsLoading }) => {
   const { review_id } = useParams();
   const [review, setReview] = useState({});
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getComments(review_id).then((newComments) => {
-      setComments(newComments);
-    });
-  }, [review_id]);
-  console.log(comments, 'comments');
-
-  useEffect(() => {
+    setIsLoading(true);
     getReview(review_id).then((newReview) => {
       setReview(newReview);
+
+      getComments(review_id).then((newComments) => {
+        setComments(newComments);
+        setIsLoading(false);
+      });
     });
   }, [review_id]);
+
+  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <div className='single-review'>

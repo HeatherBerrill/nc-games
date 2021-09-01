@@ -1,8 +1,19 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Categories.css';
+import { getCategories } from '../api';
 
-const Categories = ({ categories, setCategories }) => {
+const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
+  useEffect(() => {
+    setIsLoading(true);
+    getCategories().then((categories) => {
+      setCategories(categories);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+
   return (
     <section className='categories'>
       <h1 className='cat__title'> Categories </h1>

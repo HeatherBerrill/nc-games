@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../Styles/Single-category.css';
-import { getCategoryReviews, getSortedReviews } from '../api';
+import { getCategoryReviews } from '../api';
 
-const SingleCategory = ({ categories, reviews, setReviews }) => {
+const SingleCategory = ({ isLoading, setIsLoading, reviews, setReviews }) => {
   const { slug } = useParams();
   const [category, setCategory] = useState({});
 
   useEffect(() => {
+    setIsLoading(true);
     getCategoryReviews(slug).then((reviews) => {
       setReviews(reviews);
       setCategory(slug);
+      setIsLoading(false);
     });
-  }, [slug]);
+  }, [slug, setReviews]);
+
+  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <div className='single-category'>

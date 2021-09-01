@@ -38,3 +38,9 @@ export const getUsers = async () => {
   const { data } = await gamesApi.get('/users');
   return data.users;
 };
+
+export const getSingleUser = async (username) => {
+  const { data } = await gamesApi.get(`/users/${username}`);
+  console.log(data.user);
+  return data.user;
+};

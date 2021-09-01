@@ -10,25 +10,15 @@ import SingleCategory from './Single-category';
 import CreateReview from './Create-review';
 import SingleReview from './Single-review';
 import Nav from './Nav';
-import { getCategories, getReviews } from '../api';
+
 import Menu from './Menu';
 import Reviews from './Reviews';
 
 function App() {
   const [reviews, setReviews] = useState([]);
   const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    getCategories().then((categories) => {
-      setCategories(categories);
-    });
-  }, []);
-
-  useEffect(() => {
-    getReviews().then((reviews) => {
-      setReviews(reviews);
-    });
-  }, [setReviews]);
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className='app'>
@@ -36,15 +26,29 @@ function App() {
 
       <Switch>
         <Route exact path='/'>
-          <Home reviews={reviews} />
+          <Home
+            reviews={reviews}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/users'>
-          <Users />
+          <Users
+            users={users}
+            setUsers={setUsers}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/users/:username'>
-          <SingleUser />
+          <SingleUser
+            users={users}
+            setUsers={setUsers}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/login'>
@@ -52,7 +56,12 @@ function App() {
         </Route>
 
         <Route exact path='/categories'>
-          <Categories categories={categories} setCategories={setCategories} />
+          <Categories
+            categories={categories}
+            setCategories={setCategories}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/categories/:slug'>
@@ -61,6 +70,8 @@ function App() {
             setReviews={setReviews}
             categories={categories}
             setCategories={setCategories}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
           />
         </Route>
 
@@ -69,11 +80,16 @@ function App() {
         </Route>
 
         <Route exact path='/reviews/:review_id'>
-          <SingleReview />
+          <SingleReview isLoading={isLoading} setIsLoading={setIsLoading} />
         </Route>
 
         <Route exact path='/reviews'>
-          <Reviews reviews={reviews} setReviews={setReviews} />
+          <Reviews
+            reviews={reviews}
+            setReviews={setReviews}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </Route>
 
         <Route exact path='/menu'>

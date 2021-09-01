@@ -32,3 +32,10 @@
 .users__list {
   grid-area: users-list;
 }
+
+.loading {
+  position: absolute;
+  top: 30vh;
+  text-align: center;
+  padding: 4rem;
+}

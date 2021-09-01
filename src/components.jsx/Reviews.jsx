@@ -2,11 +2,19 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSortedReviews } from '../api';
 import '../Styles/Reviews.css';
-
+import { getReviews } from '../api';
 import Footer from './Footer';
 
-const Reviews = ({ reviews, setReviews }) => {
+const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
   const [newSort, setNewSort] = useState('');
+
+  useEffect(() => {
+    setIsLoading(true);
+    getReviews().then((reviews) => {
+      setReviews(reviews);
+      setIsLoading(false);
+    });
+  }, [setReviews]);
 
   const sortReviews = (event) => {
     event.preventDefault();
@@ -14,6 +22,8 @@ const Reviews = ({ reviews, setReviews }) => {
       setReviews(reviews);
     });
   };
+
+  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <section className='reviews'>

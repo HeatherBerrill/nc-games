@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom';
 import '../Styles/Users.css';
 import { getUsers } from '../api';
 
-const Users = () => {
-  const [users, setUsers] = useState([]);
-
+const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
   useEffect(() => {
+    setIsLoading(true);
     getUsers().then((users) => {
       setUsers(users);
+      setIsLoading(false);
     });
-  }, []);
+  }, [setUsers]);
+
+  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <section className='users'>
-      <h1 className='users__title'> Users Page</h1>
+      <h1 className='users__title'> Our Fans </h1>
       <ul className='users__list'>
         {users.map((user) => {
           return (
