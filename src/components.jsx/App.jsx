@@ -10,7 +10,6 @@ import SingleCategory from './Single-category';
 import CreateReview from './Create-review';
 import SingleReview from './Single-review';
 import Nav from './Nav';
-
 import Menu from './Menu';
 import Reviews from './Reviews';
 

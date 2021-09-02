@@ -50,11 +50,16 @@ export const getVotedReviews = async () => {
 };
 
 export const updateVotes = async (review_id, increment) => {
-  console.log(review_id, 'review id');
-  console.log(increment, 'inc');
   const { data } = await gamesApi.patch(`/reviews/${review_id}`, {
     inc_votes: increment
   });
-  console.log(data, 'in api');
+  return data;
+};
+
+export const updateCommentVotes = async (comment_id, increment) => {
+  const { data } = await gamesApi.patch(`comments/${comment_id}`, {
+    inc_votes: increment
+  });
+
   return data;
 };

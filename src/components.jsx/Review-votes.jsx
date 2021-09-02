@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import '../Styles/Votes.css';
-import { updateVotes } from '../api';
+import '../Styles/Review-votes.css';
+import { getReview, updateVotes } from '../api';
 
-const Votes = () => {
+const ReviewVotes = (review) => {
   const { review_id } = useParams();
   const [voteChange, setVoteChange] = useState(0);
   const [hasError, setHasError] = useState(false);
   const [votes, setVotes] = useState(0);
 
-  //   useEffect(() => {
-  //       setVotes(votes)
-  //     console.log(votes)
-  //     });
-  //   }, [votes]);
+  useEffect(() => {
+    getReview(review_id).then((review) => {
+      setVotes(review.votes);
+    });
+  }, [votes, review]);
 
   const incVotes = () => {
     setHasError(false);
@@ -22,13 +21,9 @@ const Votes = () => {
     setVoteChange((currVoteChange) => {
       return currVoteChange + 1;
     });
-    console.log(voteChange, 'votechange');
-    console.log(votes, 'votes');
 
     updateVotes(review_id, 1)
-      .then((review) => {
-        console.log(review);
-      })
+      .then((review) => {})
       .catch(() => {
         setHasError(true);
         setVoteChange((currVoteChange) => {
@@ -39,7 +34,7 @@ const Votes = () => {
 
   return (
     <div className='votes'>
-      <p> {votes + voteChange} </p>
+      <p> Votes: {votes + voteChange} </p>
       {hasError && <p> Sorry. There has been a problem, try again later...</p>}
       <button className='btn btn__votes' onClick={incVotes}>
         Vote
@@ -48,4 +43,4 @@ const Votes = () => {
   );
 };
 
-export default Votes;
+export default ReviewVotes;
