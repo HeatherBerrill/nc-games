@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import { postReview } from '../api';
 import '../Styles/Create-review.css';
+import deckBuilding from '../Images/deckBuilding.jpg';
+import dexterity from '../Images/dexterity.jpg';
+import engineBuilding from '../Images/engineBuilding.jpg';
+import hiddenRoles from '../Images/hiddenRoles.jpg';
+import pushyourluck from '../Images/pushyourluck.jpg';
+import Strategy from '../Images/Strategy.jpg';
+import rollandwrite from '../Images/rollandwrite.jpg';
 
 const CreateReview = ({
   setReviews,
@@ -13,6 +20,7 @@ const CreateReview = ({
   const [title, setTitle] = useState('');
   const [designer, setDesigner] = useState('');
   const [body, setBody] = useState('');
+  const [img, setImg] = useState('');
 
   console.log(title, designer, chosenCat, body);
 
@@ -22,6 +30,7 @@ const CreateReview = ({
 
     const reviewToAdd = {
       owner: loginUser.username,
+      review_img_url: img,
       title: title,
       review_body: body,
       designer: designer,
@@ -36,6 +45,7 @@ const CreateReview = ({
       setDesigner('');
       setBody('');
       setChosenCat('');
+      setImg('');
     });
   };
 
@@ -101,6 +111,26 @@ const CreateReview = ({
           <option value='roll and write'> Role and write </option>
           <option value='strategy'> Strategy </option>
         </select>
+
+        <select
+          value={img}
+          onChange={(event) => {
+            setImg(event.target.value);
+          }}
+          id='img_url'
+        >
+          <option disabled defaultValue value=''>
+            Choose Review Image
+          </option>
+          <option value={deckBuilding}>Deck-building</option>
+          <option value={dexterity}>Dexterity</option>
+          <option value={engineBuilding}>Engine-building</option>
+          <option value={hiddenRoles}>Hidden-roles</option>
+          <option value={pushyourluck}>Push your luck</option>
+          <option value={rollandwrite}>Role and write</option>
+          <option value={Strategy}>Strategy</option>
+        </select>
+
         <button className='btn create-review__btn'> Submit </button>
       </form>
     </div>
@@ -108,18 +138,3 @@ const CreateReview = ({
 };
 
 export default CreateReview;
-
-{
-  /* <form className='comment__form' onSubmit={handleSubmit}>
-        <label htmlFor='new-comment'>Add New Comment</label>
-        <input
-          type='text'
-          id='new-comment'
-          value={newComment}
-          onChange={(event) => {
-            setNewComment(event.target.value);
-          }}
-        ></input>
-        <button> Submit </button>
-      </form> */
-}
