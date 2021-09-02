@@ -63,3 +63,17 @@ export const updateCommentVotes = async (comment_id, increment) => {
 
   return data;
 };
+
+export const postComment = async (review_id, commentToAdd) => {
+  const { data } = await gamesApi.post(
+    `reviews/${review_id}/comments`,
+    commentToAdd
+  );
+  return data;
+};
+
+export const postReview = async (reviewToAdd) => {
+  const { data } = await gamesApi.post('reviews', reviewToAdd);
+  console.log(data, 'in api');
+  return data;
+};

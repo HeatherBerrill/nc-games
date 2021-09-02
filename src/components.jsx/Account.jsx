@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { getUsers } from '../api';
 import '../Styles/Account.css';
 
@@ -11,9 +10,9 @@ const Account = ({
   isLoading,
   setIsLoading
 }) => {
-  const switchUser = () => {
-    loginUser();
-  };
+  // const switchUser = () => {
+  //   loginUser();
+  // };
 
   useEffect(() => {
     setIsLoading(true);
@@ -21,7 +20,7 @@ const Account = ({
       setUsers(users);
       setIsLoading(false);
     });
-  }, []);
+  }, [loginUser, setUsers]);
 
   console.log(loginUser.username, 'in acount');
 

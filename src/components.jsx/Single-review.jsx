@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react';
-import { getReview, getComments } from '../api';
+import { getReview, getComments, postComment } from '../api';
 import { useParams } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
 import ReviewVotes from './Review-votes';
 import CommentVotes from './Comment-votes';
-const SingleReview = ({ review, setReview, isLoading, setIsLoading }) => {
+
+const SingleReview = ({
+  loginUser,
+  review,
+  setReview,
+  isLoading,
+  setIsLoading
+}) => {
   const { review_id } = useParams();
 
   const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+
   useEffect(() => {
     setIsLoading(true);
     getReview(review_id).then((newReview) => {
@@ -20,6 +29,22 @@ const SingleReview = ({ review, setReview, isLoading, setIsLoading }) => {
       });
     });
   }, [review_id]);
+
+  const handleSubmit = (event) => {
+    setIsLoading(true);
+    event.preventDefault();
+
+    const commentToAdd = {
+      username: loginUser.username,
+      body: newComment
+    };
+    postComment(review_id, commentToAdd).then((commentFromApi) => {
+      setComments((currComments) => {
+        return [...currComments, commentFromApi];
+      });
+      setIsLoading(false);
+    });
+  };
 
   if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
@@ -35,9 +60,16 @@ const SingleReview = ({ review, setReview, isLoading, setIsLoading }) => {
         <p className='single-review__description'> {review.review_body}</p>
         <ReviewVotes className='single-review__votes' />
       </div>
-      <form className='comment__form'>
+      <form className='comment__form' onSubmit={handleSubmit}>
         <label htmlFor='new-comment'>Add New Comment</label>
-        <input type='text' id='new-comment'></input>
+        <input
+          type='text'
+          id='new-comment'
+          value={newComment}
+          onChange={(event) => {
+            setNewComment(event.target.value);
+          }}
+        ></input>
         <button> Submit </button>
       </form>
       <div>

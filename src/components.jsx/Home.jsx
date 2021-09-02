@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
-import Search from './Search';
+// import Search from './Search';
 import Footer from './Footer';
 import { getVotedReviews } from '../api';
 
@@ -29,7 +29,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
           <p className='menubar__item menubar__users'> our fans</p>
         </Link>
       </div>
-      <Search className='search' />
+      {/* <Search className='search' /> */}
       <div className='home__reviews-list'>
         <p> most voted reviews...</p>
         <ul className='reviews__list'>

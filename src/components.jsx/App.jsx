@@ -1,6 +1,6 @@
 import '../Styles/App.css';
 import { Switch, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Categories from './Categories';
 import Home from './Home';
 import Users from './Users';
@@ -89,11 +89,18 @@ function App() {
         </Route>
 
         <Route exact path='/reviews/create-review'>
-          <CreateReview />
+          <CreateReview
+            loginUser={loginUser}
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            reviews={reviews}
+            setReviews={setReviews}
+          />
         </Route>
 
         <Route exact path='/reviews/:review_id'>
           <SingleReview
+            loginUser={loginUser}
             review={review}
             setReview={setReview}
             isLoading={isLoading}
