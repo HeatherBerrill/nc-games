@@ -6,11 +6,11 @@
   top: 0;
   position: absolute;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 15% 10%;
+  grid-template-rows: auto 10% 15%;
   grid-template-areas:
     'logo logo logo'
     'links menu social'
-    'links menu login-name';
+    'login-name menu social';
 }
 
 .logo {
@@ -23,18 +23,18 @@
   justify-content: center;
   align-items: center;
   grid-area: logo;
-  background-color: rgb(155, 2, 2);
+  background-color: var(--primary-color);
 }
 
 .nav_social {
   grid-area: social;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--color-white);
 }
 
 .menu__icon {
   grid-area: menu;
   margin: 20px;
-  background-color: maroon;
+  background-color: var(--primary-color);
   height: 1rem;
 }
 
@@ -42,10 +42,10 @@
   display: flex;
   justify-content: space-around;
   grid-area: links;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--color-white);
 }
 .link {
-  color: black;
+  color: var(--color-black);
 }
 .nav_link {
   text-decoration: none;
@@ -53,5 +53,6 @@
 
 .login-name {
   grid-area: login-name;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.5rem;
 }

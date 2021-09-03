@@ -4,6 +4,7 @@ import Social from './Social';
 
 import '../Styles/Nav.css';
 import logo from '../Images/dice.png';
+
 const Nav = ({ loginUser }) => {
   return (
     <div className='nav'>
@@ -18,7 +19,8 @@ const Nav = ({ loginUser }) => {
           <p className='link'> Account </p>
         </Link>
       </div>
-      <p className='login-name'> You are logged in as {loginUser.username}</p>
+      <p className='login-name'> Logged in as {loginUser.username}</p>
+
       <Link to='/menu'>
         <div className='menu__icon'></div>
       </Link>

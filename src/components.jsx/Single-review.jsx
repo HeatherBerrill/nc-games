@@ -59,6 +59,7 @@ const SingleReview = ({
         ></img>
         <p className='single-review__description'> {review.review_body}</p>
         <ReviewVotes className='single-review__votes' />
+        <button className='btn delete-btn'> Delete </button>
       </div>
       <form className='comment__form' onSubmit={handleSubmit}>
         <label htmlFor='new-comment'>Add New Comment</label>
@@ -83,6 +84,7 @@ const SingleReview = ({
                   className='single-comment__votes'
                   comment_id={comment.comment_id}
                 />
+                <button className='btn delete-btn'> Delete </button>
               </li>
             );
           })}
