@@ -1,30 +1,57 @@
 .categories {
-  width: 90vw;
-  height: 64vh;
+  width: 100vw;
+  height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% auto 25%;
-  justify-content: center;
+  grid-template-rows: 10% auto 4rem;
 
   grid-template-areas:
     'categories-title'
     'categories-list'
-    'form';
+    'footer';
 }
 .cat__title {
   grid-area: categories-title;
+  text-transform: uppercase;
+  padding: 2rem;
 }
+
 .cat__form {
-  padding-left: 3rem;
+  padding: 1rem;
   grid-area: form;
   width: 70vw;
 }
 
+.cat__name {
+  color: var(--secondary-color);
+  padding: 0 5px 5px 5px;
+}
+
 .cat__list {
+  width: 80%;
   grid-area: categories-list;
+}
+
+.cat__item {
+  text-transform: uppercase;
+  height: 3rem;
+  width: auto;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.categories__btn {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+}
+
+.cat__footer {
+  grid-area: footer;
 }

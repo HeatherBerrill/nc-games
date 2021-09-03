@@ -1,12 +1,12 @@
 .nav {
   display: grid;
-  background-color: white;
+  background-color: var(--color-white);
   width: 100vw;
-  height: 22vh;
+  height: 25vh;
   top: 0;
   position: absolute;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 10% 15%;
+  grid-template-rows: auto 15% 15%;
   grid-template-areas:
     'logo logo logo'
     'links menu social'
@@ -14,7 +14,7 @@
 }
 
 .logo {
-  height: 80px;
+  height: 70px;
   width: auto;
 }
 
@@ -23,12 +23,12 @@
   justify-content: center;
   align-items: center;
   grid-area: logo;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color-light);
 }
 
 .nav_social {
   grid-area: social;
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); */
 }
 
 .menu__icon {
@@ -42,7 +42,8 @@
   display: flex;
   justify-content: space-around;
   grid-area: links;
-  background-color: var(--color-white);
+  padding: 5px;
+  /* background-color: var(--color-white); */
 }
 .link {
   color: var(--color-black);
@@ -54,5 +55,5 @@
 .login-name {
   grid-area: login-name;
   font-size: 0.75rem;
-  padding: 0.5rem;
+  padding: 4px 0.5rem;
 }

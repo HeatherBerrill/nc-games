@@ -1,14 +1,18 @@
 .footer {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  background-color: rgb(155, 2, 2);
+  padding: 0 10px;
+  background-color: var(--primary-color);
   color: white;
-  /* position: absolute; */
-  /* bottom: 0px; */
+  grid-template-columns: 40% 20%;
+  grid-template-rows: 100%;
+  grid-template-areas: 'social logo';
   width: 100vw;
   height: 4rem;
+}
+.footer__social-container {
+  grid-area: social;
 }
 
 .footer_social {
@@ -17,6 +21,7 @@
 }
 
 .footer_logo {
+  grid-area: logo;
   height: 30px;
   width: auto;
 }

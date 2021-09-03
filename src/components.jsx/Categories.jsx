@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Categories.css';
 import { getCategories } from '../api';
+import Footer from './Footer';
 
 const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
   useEffect(() => {
@@ -16,24 +17,23 @@ const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
 
   return (
     <section className='categories'>
-      <h1 className='cat__title'> Categories </h1>
+      <h3 className='cat__title'> Categories </h3>
       <ul className='cat__list'>
         {categories.map((category) => {
           return (
-            <li key={category.slug}>
-              <h3> {category.slug}</h3>
+            <li className='cat__item' key={category.slug}>
+              <h4 className='cat__name'> {category.slug}</h4>
               <Link to={`/categories/${category.slug}`}>
-                <button>Read Category Reviews</button>
+                <button className='btn categories__btn'>
+                  Read Category Reviews
+                </button>
               </Link>
             </li>
           );
         })}
       </ul>
-      <form className='cat__form'>
-        <label htmlFor='new-cat'>Add New Category</label>
-        <input type='text' id='new-cat'></input>
-        <button> Submit </button>
-      </form>
+
+      <Footer className='cat__footer' />
     </section>
   );
 };

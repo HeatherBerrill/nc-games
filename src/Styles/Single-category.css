@@ -1,14 +1,10 @@
-/* .single-category {
-  border: 2px solid rgb(14, 174, 196);
-} */
 .single-category {
-  width: 90vw;
-  height: 64vh;
+  width: 100vw;
+  height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
   grid-template-rows: 45% auto;
@@ -19,6 +15,10 @@
     'reviews-list';
 }
 .single-category__content {
+  background-color: var(--color-white);
+  height: 10rem;
+  margin: 2rem;
+  border-radius: 5px;
   grid-area: category-content;
   display: flex;
   flex-wrap: wrap;

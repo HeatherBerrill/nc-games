@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
-// import Search from './Search';
 import Footer from './Footer';
 import { getVotedReviews } from '../api';
 
@@ -29,30 +28,33 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
           <p className='menubar__item menubar__users'> our fans</p>
         </Link>
       </div>
-      {/* <Search className='search' /> */}
-      <div className='home__reviews-list'>
-        <p> most voted reviews...</p>
+
+      <div className='home__reviews-list-container'>
+        <p className='rated-reviews__title'> most voted reviews...</p>
         <ul className='reviews__list'>
           {reviews.map((review) => {
             return (
-              <li key={review.review_id}>
-                <h3> {review.category}</h3>
+              <li className={'home__single-review'} key={review.review_id}>
+                <h3 className='home__review-category'> {review.category}</h3>
                 <Link to={`/reviews/${review.review_id}`}>
-                  <button>Read Review</button>
+                  <button className='btn home__review-btn'>Read Review</button>
                 </Link>
-                <h3> {review.title} </h3>
+                <h3 className='home__review-title'> {review.title} </h3>
 
-                <p> {review.designer} </p>
+                <p className='home__review-owner'> {review.owner} </p>
                 <img
-                  alt={review.title}
-                  className='review-list__thumbnail'
+                  alt='review image'
+                  className='home__review-list-thumbnail'
                   src={review.review_img_url}
                 ></img>
-                <p> votes: {review.votes} </p>
+                <p className='home__review-votes'> votes: {review.votes} </p>
               </li>
             );
           })}
         </ul>
+        <Link to={'/reviews'}>
+          <button className='btn home__review-btn'>All Reviews</button>
+        </Link>
       </div>
       <Footer className='home__footer' />
     </section>

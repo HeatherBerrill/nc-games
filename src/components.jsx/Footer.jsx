@@ -8,7 +8,10 @@ import logo from '../Images/dice.png';
 const Footer = () => {
   return (
     <div className='footer'>
-      <Social className='footer_social' />
+      <div className='footer__social-container'>
+        <Social className='footer_social' />
+      </div>
+
       <img src={logo} className='footer_logo' alt='logo'></img>
     </div>
   );

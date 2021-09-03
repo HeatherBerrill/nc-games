@@ -1,11 +1,10 @@
 .single-user {
-  width: 90vw;
-  height: 64vh;
+  width: 100vw;
+  min-height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
   grid-template-rows: auto 15%;
@@ -20,14 +19,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 }
 
-.back-btn {
+.single-user__back-btn {
   grid-area: single-user-btn;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
 }
 
 .user-image-box {
-  height: 7rem;
-  width: 7rem;
-  background-color: rgb(255, 255, 255);
+  height: auto;
+  width: 60%;
+  padding: 1rem;
+}
+
+.single-user__name {
+  padding: 1rem;
+}
+
+.single-user__username {
+  text-transform: uppercase;
 }

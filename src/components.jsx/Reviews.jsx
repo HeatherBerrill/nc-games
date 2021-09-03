@@ -18,8 +18,10 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
 
   const sortReviews = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     getSortedReviews(newSort).then((reviews) => {
       setReviews(reviews);
+      setIsLoading(false);
     });
   };
 
@@ -27,7 +29,10 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
 
   return (
     <section className='reviews'>
-      <h1 className='reviews__title'> All Reviews </h1>
+      <h3 className='reviews__title'> Reviews </h3>
+      <Link to='/reviews/create-review'>
+        <button className='btn reviews-new-review__btn'>Add New Review</button>
+      </Link>
       <label htmlFor='sort-dropdown'></label>
       <br />
       <form className='reviews-sort-form' onSubmit={sortReviews}>
@@ -46,30 +51,26 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
           <option value='comment_count'> Most Comments </option>
           <option value='votes'> Most voted </option>
         </select>
-        <button className='btn sort__btn'> Submit </button>
-
-        <Link to='/reviews/create-review'>
-          <button className='btn reviews__btn'> Add New Review </button>
-        </Link>
+        <button className='btn sort__btn'> Sort </button>
       </form>
 
       <ul className='reviews__list'>
         {reviews.map((review) => {
           return (
-            <li key={review.review_id}>
-              <h3> {review.category}</h3>
+            <li className='reviews__single' key={review.review_id}>
+              <h4 className='reviews__category'> {review.category}</h4>
               <Link to={`/reviews/${review.review_id}`}>
-                <button>Read Review</button>
+                <button className='btn reviews-single__btn'>Read Review</button>
               </Link>
-              <h3> {review.title} </h3>
+              <p className='reviews-single__title'> {review.title} </p>
 
-              <p> {review.designer} </p>
+              <p className='reviews__owner'> {review.owner} </p>
               <img
                 alt={review.title}
-                className='review-list__thumbnail'
+                className='reviews-list__thumbnail'
                 src={review.review_img_url}
               ></img>
-              <p> votes: {review.votes} </p>
+              <p className='reviews__votes'> votes: {review.votes} </p>
             </li>
           );
         })}

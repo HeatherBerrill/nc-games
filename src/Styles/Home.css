@@ -1,15 +1,15 @@
 .home {
   position: absolute;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
+  background-size: 100%;
   display: grid;
   width: 100vw;
-  height: 75vh;
+  height: auto;
   top: 25vh;
   grid-template-columns: 100vw;
-  grid-template-rows: 15% 15% auto 4rem;
+  grid-template-rows: 8% auto 4rem;
   grid-template-areas:
     'menubar'
-    'search'
     'home-reviews-list'
     'footer';
 }
@@ -17,9 +17,8 @@
 .menubar {
   grid-area: menubar;
   height: 3rem;
-  /* width: 100vw; */
-
-  background-color: rgb(155, 2, 2);
+  text-transform: uppercase;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -30,7 +29,6 @@
   text-decoration: none;
 }
 .menubar__item {
-  margin: 0;
   color: rgb(255, 255, 255);
 }
 
@@ -47,17 +45,80 @@
   padding-left: 10px;
 }
 
-.search {
-  grid-area: search;
+.reviews__list {
+  padding: 0;
 }
 
-.home__reviews-list {
+.home__reviews-list-container {
+  align-items: center;
+  margin: 1rem;
   text-align: center;
-  grid-area: home-reviews-list;
+}
+
+.rated-reviews__title {
+  text-align: left;
+  margin-left: 1rem;
 }
 
 .home__footer {
   grid-area: footer;
-  position: relative;
   bottom: 0;
+}
+
+.home__single-review {
+  height: 10rem;
+  background-color: var(--color-white);
+  background-size: 100%, auto;
+  border-radius: 5px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 20% 10% 10% 20% 40%;
+  grid-template-areas:
+    'category category'
+    'img title'
+    'img owner'
+    'img votes'
+    'img button';
+
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.home__review-category {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  grid-area: category;
+}
+
+.home__review-owner {
+  padding: 0.5rem 0;
+  font-size: 0.5rem;
+  grid-area: owner;
+}
+
+.home__review-title {
+  font-size: 0.5rem;
+  grid-area: title;
+}
+
+.home__review-votes {
+  padding: 0.5rem 0;
+  font-size: 0.5rem;
+  grid-area: votes;
+}
+
+.home__review-btn {
+  grid-area: button;
+  padding: 0.5rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.5rem;
+}
+
+.home__review-list-thumbnail {
+  grid-area: img;
+  object-fit: cover;
+  width: 80%;
+  height: 80%;
+  margin: 0.25rem;
 }

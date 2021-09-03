@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../Styles/Single-user.css';
 import { getSingleUser } from '../api';
+import Footer from './Footer';
 
 const SingleUser = ({ users, isLoading, setIsLoading }) => {
   const { username } = useParams();
@@ -20,8 +21,8 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
   return (
     <div className='single-user'>
       <div className='single-user__content'>
-        <h3> {user.username}</h3>
-        <p> Name: {user.name} </p>
+        <h3 className='single-user__username'> {user.username}</h3>
+        <p className='single-user__name'> Name: {user.name} </p>
         <img
           alt='avatar image'
           src={user.avatar_url}
@@ -29,8 +30,9 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
         ></img>
       </div>
       <Link to='/users'>
-        <button className='btn back-btn'> Back </button>
+        <button className='btn single-user__back-btn'> Back </button>
       </Link>
+      <Footer className='single-user__footer' />
     </div>
   );
 };

@@ -1,41 +1,99 @@
 .reviews {
-  width: 90vw;
+  width: 100vw;
   height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
+  align-items: center;
+
   grid-template-columns: 100vw;
-  grid-template-rows: 4rem 4rem auto 4rem;
+  grid-template-rows: 4rem 2rem 2rem auto 4rem;
   justify-content: center;
 
   grid-template-areas:
     'reviews-title'
     'sort-form'
+    'new-review'
     'reviews-list'
     'button';
 }
 .reviews__title {
+  text-transform: uppercase;
+  padding: 2rem;
   grid-area: reviews-title;
 }
-.reviews__btn {
-  grid-area: button;
-  padding-left: 3rem;
-  grid-area: form;
-  width: 70vw;
+.reviews-new-review__btn {
+  grid-area: new-review;
+  margin: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.5rem;
+}
+
+.reviews-sort-form {
+  grid-area: sort-form;
+  justify-content: center;
 }
 
 .reviews__list {
   grid-area: reviews-list;
 }
 
-.reviews-sort-form {
-  grid-area: sort-form;
+.reviews__single {
+  background-color: var(--color-white);
+  height: 5rem;
+  width: 70vw;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem auto;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 20% 10% 10% 20% 40%;
+  grid-template-areas:
+    'category category'
+    'img title'
+    'img owner'
+    'img votes'
+    'img list-button';
+}
+.reviews-list__thumbnail {
+  grid-area: img;
+  object-fit: cover;
+  width: 80%;
+  height: 80%;
+  margin: 0.25rem;
 }
 
-.review-list__thumbnail {
-  height: 4rem;
-  width: auto;
+.reviews__category {
+  font-size: 0.75rem;
+  grid-area: category;
+  text-transform: uppercase;
+}
+
+.reviews-single__title {
+  font-size: 0.5rem;
+  grid-area: title;
+}
+
+.reviews__votes {
+  grid-area: votes;
+  padding: 0.5rem 0;
+  font-size: 0.5rem;
+}
+
+.reviews-single__btn {
+  grid-area: list-button;
+  padding: 0.5rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.5rem;
+}
+
+.reviews__owner {
+  grid-area: owner;
+  padding: 0.5rem 0;
+  font-size: 0.5rem;
 }

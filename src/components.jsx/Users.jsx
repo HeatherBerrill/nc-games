@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Users.css';
 import { getUsers } from '../api';
+import Footer from './Footer';
 
 const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
   useEffect(() => {
@@ -20,18 +21,16 @@ const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
       <ul className='users__list'>
         {users.map((user) => {
           return (
-            <li key={user.username}>
-              <h3> {user.username}</h3>
+            <li className='users__single' key={user.username}>
+              <h3 className='users__username'> {user.username}</h3>
               <Link to={`/users/${user.username}`}>
-                <button>View User</button>
+                <button className='btn users-single__btn'>View User</button>
               </Link>
             </li>
           );
         })}
       </ul>
-      <Link to='/login'>
-        <button className='btn users__btn'> Login </button>
-      </Link>
+      <Footer className='users__footer' />
     </section>
   );
 };
