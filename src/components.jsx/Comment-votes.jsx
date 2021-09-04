@@ -42,10 +42,10 @@ const CommentVotes = ({ comment_id }) => {
   };
 
   return (
-    <div className='comment-votes'>
-      <p> Votes: {votes + voteChange} </p>
+    <div className='comment__votes'>
+      <p className='comment__votes-count'> Votes: {votes + voteChange} </p>
       {hasError && <p> Sorry. There has been a problem, try again later...</p>}
-      <button className='btn btn__votes' onClick={incCommentVotes}>
+      <button className='btn comment-btn__votes' onClick={incCommentVotes}>
         Vote
       </button>
     </div>

@@ -1,20 +1,13 @@
-/* .single-review {
-  border: 2px solid rgb(13, 82, 1);
-} */
-/* .login {
-  border: 2px solid rgb(172, 5, 116);
-} */
 .single-review {
-  width: 90vw;
-  height: auto;
+  width: 100vw;
+  min-height: 82vh;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 2rem 8rem 5rem auto;
+  grid-template-rows: 4rem 12rem 5rem auto;
   justify-content: center;
 
   grid-template-areas:
@@ -23,39 +16,165 @@
     'single-review-form'
     'single-review-comments';
 }
-.single-review__title {
+.single-review-page__title {
   margin: 1rem;
   grid-area: single-review-title;
 }
 
+/* review content  */
+
 .single-review__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  height: 12rem;
+  border-radius: 5px;
+  background-color: var(--color-white);
   margin: 1rem;
+  padding: 0.5rem;
   font-size: 0.5rem;
   grid-area: single-review-content;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 25% 10% 65%;
+  grid-template-rows: 10% 10% 10% 10% auto 15% 10%;
+  grid-template-areas:
+    'img designer designer '
+    'img created-at created-at'
+    'img category category'
+    'img owner owner'
+    'description description description'
+    'votes votes votes'
+    'comment-count comment-count delete';
 }
 
-.comment__form {
-  grid-area: single-review-form;
+.single-review__created-at {
+  grid-area: created-at;
+  text-align: left;
+  padding: 0.25rem;
 }
 
-.single-review__comments-list {
-  grid-area: single-review-comments;
+.single-review__designer {
+  grid-area: designer;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.single-review__category {
+  grid-area: category;
+  padding: 0.25rem;
+  text-align: left;
 }
 
 .single-review__votes {
-  padding: 2rem;
-  margin: 2rem;
+  grid-area: votes;
+  padding: 0.25rem;
+  align-self: center;
+  justify-self: start;
 }
 
-.review__image {
-  height: 4rem;
-  width: auto;
-  background-color: cornsilk;
+.single-review__image {
+  grid-area: img;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.single-review__description {
+.single-review__owner {
+  grid-area: owner;
   text-align: left;
+  padding: 0.25rem;
+}
+.single-review__description {
+  grid-area: description;
+  border: solid 1px var(--secondary-color-light);
+  border-radius: 3px;
+  text-align: left;
+  padding: 0.5rem;
+}
+.single-review__comment-count {
+  grid-area: comment-count;
+  text-align: left;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.single-review__delete-btn {
+  grid-area: delete;
+  border-radius: 15px;
+  padding: 3px 12px;
+  margin: 0.5rem;
+  width: 5rem;
+  align-self: center;
+  justify-self: end;
+}
+
+/* new comment form */
+
+.single-review__comment-form {
+  margin: 2rem;
+  grid-area: single-review-form;
+  padding: 1rem;
+}
+
+/* list of comments  */
+
+.single-review__comments-list {
+  height: auto;
+  grid-area: single-review-comments;
+}
+
+.single-comment {
+  background-color: var(--color-white);
+  border-radius: 5px;
+  height: 5rem;
+  width: 70%;
+  padding: 1rem;
+  margin: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.5rem;
+  text-align: left;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% auto 30%;
+  grid-template-areas:
+    'author author'
+    'body body'
+    'com-votes delete';
+}
+
+.single-comment__author {
+  grid-area: author;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.single-comment__body {
+  grid-area: body;
+  font-size: 0.5rem;
+}
+
+.single-comment__delete-btn {
+  grid-area: delete;
+  border-radius: 15px;
+  padding: 3px 12px;
+  margin: 0.5rem;
+  align-self: center;
+  justify-self: end;
+}
+
+.single-comment__delete-btn {
+  grid-area: delete;
+  border-radius: 15px;
+  padding: 3px 12px;
+  margin: 0.5rem;
+  align-self: center;
+  justify-self: end;
+}
+
+.single-comment__delete-btn:disabled {
+  background-color: silver;
+}
+.single-comment__votes {
+  grid-area: com-votes;
+  align-self: center;
+  justify-self: start;
 }

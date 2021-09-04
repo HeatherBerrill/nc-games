@@ -5,7 +5,7 @@ const gamesApi = axios.create({
 });
 
 export const getReviews = async () => {
-  const { data } = await gamesApi.get('/reviews');
+  const { data } = await gamesApi.get('/reviews?limit=20');
   return data.reviews;
 };
 
@@ -75,5 +75,12 @@ export const postComment = async (review_id, commentToAdd) => {
 export const postReview = async (reviewToAdd) => {
   const { data } = await gamesApi.post('reviews', reviewToAdd);
   console.log(data, 'in api');
+  return data;
+};
+
+export const deleteComment = async (comment_id) => {
+  console.log(comment_id, 'in api');
+  const { data } = await gamesApi.delete(`comments/${comment_id}`);
+  console.log(data, ' data in api');
   return data;
 };

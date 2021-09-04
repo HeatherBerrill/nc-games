@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getReview, getComments, postComment } from '../api';
+import { getReview, getComments, postComment, deleteComment } from '../api';
 import { useParams } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
@@ -17,6 +17,7 @@ const SingleReview = ({
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -28,7 +29,7 @@ const SingleReview = ({
         setIsLoading(false);
       });
     });
-  }, [review_id]);
+  }, [setReview, review_id]);
 
   const handleSubmit = (event) => {
     setIsLoading(true);
@@ -46,23 +47,50 @@ const SingleReview = ({
     });
   };
 
+  const commentToDelete = (comment_id) => {
+    setIsLoading(true);
+
+    deleteComment(comment_id).then(() => {
+      const newComments = [];
+      comments.forEach((comment) => {
+        if (comment_id !== comment.comment_id) {
+          newComments.push(comment);
+        }
+      });
+      console.log(newComments, 'new coms');
+      setComments(newComments);
+      setIsLoading(false);
+    });
+  };
+
   if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 
   return (
     <div className='single-review'>
-      <h4 className='single-review__title'> {review.title} </h4>
+      <h4 className='single-review-page__title'> {review.title} </h4>
       <div className='single-review__content'>
         <img
-          className='review__image'
+          className='single-review__image'
           src={review.review_img_url}
           alt='review_image'
         ></img>
+        <p className='single-review__owner'> Created by:{review.owner}</p>
+        <p className='single-review__designer'>
+          Game designer:{review.designer}
+        </p>
+        <p className='single-review__created-at'>
+          Created on:{review.created_at}
+        </p>
+        <p className='single-review__category'>Category:{review.category}</p>
+        <p className='single-review__comment-count'>
+          Comments: {review.comment_count}
+        </p>
         <p className='single-review__description'> {review.review_body}</p>
         <ReviewVotes className='single-review__votes' />
-        <button className='btn delete-btn'> Delete </button>
+        <button className='btn single-review__delete-btn'> Delete </button>
       </div>
-      <form className='comment__form' onSubmit={handleSubmit}>
-        <label htmlFor='new-comment'>Add New Comment</label>
+      <form className='single-review__comment-form' onSubmit={handleSubmit}>
+        <label htmlFor='single-review__new-comment'>Add New Comment</label>
         <input
           type='text'
           id='new-comment'
@@ -73,23 +101,31 @@ const SingleReview = ({
         ></input>
         <button> Submit </button>
       </form>
-      <div>
-        <ul className='single-review__comments-list'>
-          {comments.map((comment) => {
-            return (
-              <li key={comment.comment_id}>
-                <h3> {comment.author}</h3>
-                <p> {comment.body} </p>
-                <CommentVotes
-                  className='single-comment__votes'
-                  comment_id={comment.comment_id}
-                />
-                <button className='btn delete-btn'> Delete </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <div> </div>
+      <ul className='single-review__comments-list'>
+        {comments.map((comment) => {
+          return (
+            <li className='single-comment' key={comment.comment_id}>
+              <h3 className='single-comment__author'> {comment.author}</h3>
+              <p className='single-comment__body'> {comment.body} </p>
+              <CommentVotes
+                className='single-comment__votes'
+                comment_id={comment.comment_id}
+              />
+              <button
+                disabled={loginUser !== comment.author}
+                onClick={() => {
+                  commentToDelete(comment.comment_id);
+                }}
+                className='btn single-comment__delete-btn'
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+
       <Footer className='single-review__footer' />
     </div>
   );

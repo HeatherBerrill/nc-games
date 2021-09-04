@@ -33,8 +33,8 @@ const ReviewVotes = (review) => {
   };
 
   return (
-    <div className='votes'>
-      <p> Votes: {votes + voteChange} </p>
+    <div className='review__votes'>
+      <p className='review__votes-count'> Votes: {votes + voteChange} </p>
       {hasError && <p> Sorry. There has been a problem, try again later...</p>}
       <button className='btn btn__votes' onClick={incVotes}>
         Vote

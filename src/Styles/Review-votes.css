@@ -1,3 +1,23 @@
+.review__votes {
+  width: 12rem;
+  font-size: 0.75rem;
+  display: grid;
+  grid-template-columns: 40% 50%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  grid-template-areas: 'votes-count votes-button ';
+}
+
 .btn__votes {
-  background-color: rgb(155, 2, 2);
+  grid-area: votes-button;
+  border-radius: 10px;
+  margin: 0.5rem;
+  align-self: center;
+}
+
+.review__votes-count {
+  grid-area: votes-count;
+  font-size: 0.75rem;
+  align-self: center;
+  justify-self: start;
 }
