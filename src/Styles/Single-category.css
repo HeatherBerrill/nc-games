@@ -26,6 +26,7 @@
 }
 
 .single-category__reviews-list {
+  background-color: var(--color-white);
   grid-area: reviews-list;
 }
 .single-category__description {

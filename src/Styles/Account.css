@@ -1,31 +1,46 @@
-/* .login {
-  border: 2px solid rgb(172, 5, 116);
-} */
 .account {
-  width: 90vw;
-  height: 64vh;
+  width: 100vw;
+  height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 25% 15% auto;
+  grid-template-rows: 25% auto;
   justify-content: center;
 
   grid-template-areas:
     'account-message'
-    'switch-user-message'
     'switch-user-list';
 }
 .account__message {
+  margin: 2rem;
+  text-transform: uppercase;
   grid-area: account-message;
-}
-.switch-user__message {
-  grid-area: switch-user-message;
 }
 
 .switch-user__list {
   grid-area: switch-user-list;
+}
+
+.account-user__list {
+  text-transform: uppercase;
+}
+.switch-user__btn {
+  border-radius: 15px;
+  padding: 3px 5px;
+  margin: 0.25rem;
+}
+
+.account__user {
+  background-color: var(--color-white);
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 0.75rem;
+}
+
+.bold__username {
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }

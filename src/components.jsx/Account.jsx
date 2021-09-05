@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { getUsers } from '../api';
 import '../Styles/Account.css';
-
+import Footer from './Footer';
 const Account = ({
   setUsers,
   users,
@@ -29,17 +29,16 @@ const Account = ({
   return (
     <div className='account'>
       <h3 className='account__message'>
-        You are logged in as {loginUser.username}
+        You are logged in as{' '}
+        <span className='bold__username'>{loginUser.username}</span>
       </h3>
-
-      <p className='switch-user__message'>Switch User </p>
-
       <ul className='switch-user__list'>
         {users.map((user) => {
           return (
-            <li key={user.username}>
-              <h3> {user.username}</h3>
+            <li className='account__user' key={user.username}>
+              <h3 className='account-user__list'> {user.username}</h3>
               <button
+                className='btn switch-user__btn'
                 onClick={() => {
                   setLoginUser(user);
                 }}
@@ -50,6 +49,7 @@ const Account = ({
           );
         })}
       </ul>
+      <Footer className='account__footer' />
     </div>
   );
 };

@@ -74,13 +74,17 @@ export const postComment = async (review_id, commentToAdd) => {
 
 export const postReview = async (reviewToAdd) => {
   const { data } = await gamesApi.post('reviews', reviewToAdd);
-  console.log(data, 'in api');
   return data;
 };
 
 export const deleteComment = async (comment_id) => {
-  console.log(comment_id, 'in api');
   const { data } = await gamesApi.delete(`comments/${comment_id}`);
+  return data;
+};
+
+export const deleteReview = async (review_id) => {
+  console.log(review_id, 'in api');
+  const { data } = await gamesApi.delete(`reviews/${review_id}`);
   console.log(data, ' data in api');
   return data;
 };

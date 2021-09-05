@@ -106,6 +106,10 @@
   justify-self: end;
 }
 
+.single-review__delete-btn:disabled {
+  background-color: silver;
+}
+
 /* new comment form */
 
 .single-review__comment-form {

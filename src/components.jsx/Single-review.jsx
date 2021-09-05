@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { getReview, getComments, postComment, deleteComment } from '../api';
+import {
+  getReview,
+  getComments,
+  postComment,
+  deleteComment,
+  deleteReview
+} from '../api';
 import { useParams } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
@@ -17,7 +23,6 @@ const SingleReview = ({
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -26,6 +31,7 @@ const SingleReview = ({
 
       getComments(review_id).then((newComments) => {
         setComments(newComments);
+
         setIsLoading(false);
       });
     });
@@ -47,6 +53,21 @@ const SingleReview = ({
     });
   };
 
+  const reviewToDelete = (review_id) => {
+    setIsLoading(true);
+
+    deleteReview(review_id)
+      .then((response) => {
+        console.log(response, 'res');
+        console.log('review deleted');
+      })
+      .catch((error) => {
+        console.log(error, 'error');
+      });
+
+    setIsLoading(false);
+  };
+
   const commentToDelete = (comment_id) => {
     setIsLoading(true);
 
@@ -57,7 +78,6 @@ const SingleReview = ({
           newComments.push(comment);
         }
       });
-      console.log(newComments, 'new coms');
       setComments(newComments);
       setIsLoading(false);
     });
@@ -87,7 +107,15 @@ const SingleReview = ({
         </p>
         <p className='single-review__description'> {review.review_body}</p>
         <ReviewVotes className='single-review__votes' />
-        <button className='btn single-review__delete-btn'> Delete </button>
+        <button
+          disabled={loginUser.username === review.owner ? false : true}
+          onClick={() => {
+            reviewToDelete(review.review_id);
+          }}
+          className='btn single-review__delete-btn'
+        >
+          Delete
+        </button>
       </div>
       <form className='single-review__comment-form' onSubmit={handleSubmit}>
         <label htmlFor='single-review__new-comment'>Add New Comment</label>
@@ -113,7 +141,7 @@ const SingleReview = ({
                 comment_id={comment.comment_id}
               />
               <button
-                disabled={loginUser !== comment.author}
+                disabled={loginUser.username === comment.author ? false : true}
                 onClick={() => {
                   commentToDelete(comment.comment_id);
                 }}
