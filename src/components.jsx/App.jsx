@@ -116,10 +116,6 @@ function App() {
             setIsLoading={setIsLoading}
           />
         </Route>
-
-        <Route exact path='/menu'>
-          <Menu />
-        </Route>
       </Switch>
     </div>
   );

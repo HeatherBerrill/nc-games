@@ -21,9 +21,37 @@ const Nav = ({ loginUser }) => {
       </div>
       <p className='login-name'> Logged in as {loginUser.username}</p>
 
-      <Link to='/menu'>
-        <div className='menu__icon'></div>
-      </Link>
+      <div class='menu'>
+        <input
+          type='checkbox'
+          className='menu__checkbox'
+          id='menu-toggle'
+        ></input>
+        <label htmlFor='menu-toggle' className='menu__button'>
+          <span className='menu__icon'> </span>
+        </label>
+
+        <div className='menu__background'> </div>
+        <nav className='menu__nav'>
+          <ul className='menu__list'>
+            <Link className='menu__link' to='/'>
+              <li className='menu__item'> Home </li>
+            </Link>
+            <Link className='menu__link' to='/login'>
+              <li className='menu__item'> Login </li>
+            </Link>
+            <Link className='menu__link' to='/categories'>
+              <li className='menu__item'> Categories </li>
+            </Link>
+            <Link className='menu__link' to='/users'>
+              <li className='menu__item'> Our Users </li>
+            </Link>
+            <Link className='menu__link' to='/reviews'>
+              <li className='menu__item'> All reviews </li>
+            </Link>
+          </ul>
+        </nav>
+      </div>
 
       <Social className='nav_social' />
     </div>

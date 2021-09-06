@@ -1,6 +1,6 @@
-.menu {
+/* .menu {
   position: absolute;
-  background-color: rgb(155, 2, 2);
+  background-color: rgb(219, 190, 190);
   display: grid;
   width: 100vw;
   height: 68vh;
@@ -14,8 +14,8 @@
     'menu-social';
   text-align: center;
   justify-items: center;
-}
-
+} */
+/* 
 .menu__title {
   color: white;
   grid-area: menu-title;
@@ -40,4 +40,4 @@
 .menu__link {
   color: white;
   /* text-align: center; */
-}
+/* } */
