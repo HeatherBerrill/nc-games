@@ -7,7 +7,7 @@
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 25% auto;
+  grid-template-rows: 15% auto;
   justify-content: center;
 
   grid-template-areas:
@@ -22,6 +22,8 @@
 
 .switch-user__list {
   grid-area: switch-user-list;
+  margin: 0 auto 1.5rem;
+  padding: 0;
 }
 
 .account-user__list {

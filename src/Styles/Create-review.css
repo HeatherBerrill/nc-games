@@ -1,17 +1,10 @@
-/* .create-review {
-  border: 2px solid rgb(5, 102, 119);
-} */
-/* .login {
-  border: 2px solid rgb(172, 5, 116);
-} */
 .create-review {
-  width: 90vw;
-  height: 64vh;
+  width: 100vw;
+  height: auto;
   top: 25vh;
-  background-color: rgb(212, 212, 212);
+  background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
-  margin: 1rem;
   text-align: center;
   grid-template-columns: 100vw;
   grid-template-rows: 15% auto;
@@ -26,5 +19,51 @@
 }
 
 .create-review__form {
+  height: 20rem;
+  width: 80vw;
+  margin: 1rem;
   grid-area: review-form;
+  display: grid;
+  grid-template-columns: 80%;
+  grid-template-rows: 15% 15% 15% 15% 15% 25%;
+  justify-content: center;
+
+  grid-template-areas:
+    'form-title'
+    'form-designer'
+    'form-body'
+    'cat-dropdown'
+    'img-dropdown'
+    'form-btn';
+}
+
+.create-review__title-input {
+  margin: 0.25rem;
+  grid-area: form-title;
+}
+
+.create-review__designer-input {
+  margin: 0.25rem;
+  grid-area: form-designer;
+}
+
+.create-review__body-input {
+  margin: 0.25rem;
+  grid-area: form-body;
+}
+
+.create-review__category-dropdown {
+  margin: 0.25rem;
+  grid-area: cat-dropdown;
+}
+
+.create-review__img-dropdown {
+  margin: 0.25rem;
+  grid-area: img-dropdown;
+}
+
+.create-review__btn {
+  border-radius: 15px;
+  margin: 0.25rem;
+  grid-area: form-btn;
 }

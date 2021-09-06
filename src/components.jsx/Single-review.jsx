@@ -6,7 +6,7 @@ import {
   deleteComment,
   deleteReview
 } from '../api';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import '../Styles/Single-review.css';
 import Footer from './Footer';
 import ReviewVotes from './Review-votes';
@@ -23,7 +23,7 @@ const SingleReview = ({
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-
+  const history = useHistory();
   useEffect(() => {
     setIsLoading(true);
     getReview(review_id).then((newReview) => {
@@ -58,12 +58,9 @@ const SingleReview = ({
 
     deleteReview(review_id)
       .then((response) => {
-        console.log(response, 'res');
-        console.log('review deleted');
+        history.push('/reviews');
       })
-      .catch((error) => {
-        console.log(error, 'error');
-      });
+      .catch((error) => {});
 
     setIsLoading(false);
   };

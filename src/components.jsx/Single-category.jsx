@@ -30,10 +30,11 @@ const SingleCategory = ({
 
       setIsLoading(false);
     });
-  }, [slug, setReviews, reviews, setCategories]);
+  }, [slug]);
 
   if (isLoading) return <h3 className='loading'> Loading ...</h3>;
-  console.log(reviews);
+
+  console.log(reviews, 'in get');
 
   return (
     <div className='single-category'>
@@ -43,21 +44,27 @@ const SingleCategory = ({
           Description: {category.description}
         </p>
         <Link to='/reviews/create-review'>
-          <button className='btn reviews__btn'> Add New Review </button>
+          <button className='btn single-category__add-review-btn'>
+            {' '}
+            Add New Review{' '}
+          </button>
         </Link>
       </div>
       <ul className='single-category__reviews-list'>
         {reviews.map((review) => {
           return (
-            <li key={review.review_id}>
+            <li
+              className='single-category__single-review'
+              key={review.review_id}
+            >
               <Link to={`/reviews/${review.review_id}`}>
-                <button>Read Review</button>
+                <button className=' btn single-category__review-btn'>
+                  Read Review
+                </button>
               </Link>
               <h3 className='single-category__review-title'>{review.title}</h3>
 
-              <p className='single-category__review-designer'>
-                {review.designer}
-              </p>
+              <p className='single-category__review-owner'>{review.owner}</p>
               <img
                 alt={review.title}
                 className='single-category__review-list-thumbnail'

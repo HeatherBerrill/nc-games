@@ -10,10 +10,6 @@ const Account = ({
   isLoading,
   setIsLoading
 }) => {
-  // const switchUser = () => {
-  //   loginUser();
-  // };
-
   useEffect(() => {
     setIsLoading(true);
     getUsers().then((users) => {
@@ -21,8 +17,6 @@ const Account = ({
       setIsLoading(false);
     });
   }, [loginUser, setUsers]);
-
-  console.log(loginUser.username, 'in acount');
 
   if (isLoading) return <h3 className='loading'> Loading ...</h3>;
 

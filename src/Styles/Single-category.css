@@ -7,34 +7,96 @@
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 45% auto;
+  grid-template-rows: 35% auto;
   justify-content: center;
 
   grid-template-areas:
     'category-content'
     'reviews-list';
 }
+
 .single-category__content {
   background-color: var(--color-white);
   height: 10rem;
   margin: 2rem;
   border-radius: 5px;
   grid-area: category-content;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% auto 25%;
+  grid-template-areas:
+    'category-title'
+    'category-description'
+    'category-button';
 }
 
-.single-category__reviews-list {
-  background-color: var(--color-white);
-  grid-area: reviews-list;
+.single-category__title {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  grid-area: category-title;
 }
+
 .single-category__description {
   font-size: 0.75rem;
   text-align: left;
   margin: 1rem;
+  grid-area: category-description;
 }
 
-.single-category__title {
+.single-category__add-review-btn {
+  grid-area: category-button;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+.single-category__reviews-list {
+  grid-area: reviews-list;
+}
+
+.single-category__single-review {
+  background-color: var(--color-white);
+  min-height: 7rem;
+  width: 80%;
   text-align: left;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+    'review-img review-title'
+    'review-img review-owner'
+    'review-img review-votes'
+    'review-img review-btn';
+}
+
+.single-category__review-list-thumbnail {
+  grid-area: review-img;
+  height: 3rem;
+  width: auto;
+}
+
+.single-category__review-btn {
+  grid-area: review-btn;
+  border-radius: 15px;
+  padding: 2px 8px;
+}
+
+.single-category__review-owner {
+  padding: 0.25rem;
+  grid-area: review-owner;
+  font-size: 0.75rem;
+}
+
+.single-category__review-votes {
+  grid-area: review-votes;
+  font-size: 0.75rem;
+}
+
+.single-category__review-title {
+  grid-area: review-title;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }

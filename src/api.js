@@ -83,8 +83,6 @@ export const deleteComment = async (comment_id) => {
 };
 
 export const deleteReview = async (review_id) => {
-  console.log(review_id, 'in api');
   const { data } = await gamesApi.delete(`reviews/${review_id}`);
-  console.log(data, ' data in api');
   return data;
 };

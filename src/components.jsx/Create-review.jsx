@@ -8,6 +8,7 @@ import hiddenRoles from '../Images/hiddenRoles.jpg';
 import pushyourluck from '../Images/pushyourluck.jpg';
 import Strategy from '../Images/Strategy.jpg';
 import rollandwrite from '../Images/rollandwrite.jpg';
+import Footer from './Footer';
 
 const CreateReview = ({
   setReviews,
@@ -58,6 +59,7 @@ const CreateReview = ({
         <label htmlFor='title'>Title:</label>
         <br />
         <input
+          className='create-review__title-input'
           value={title}
           type='text'
           id='title'
@@ -70,6 +72,7 @@ const CreateReview = ({
         <label htmlFor='designer'>Designer:</label>
         <br />
         <input
+          className='create-review__designer-input'
           value={designer}
           type='text'
           id='designer'
@@ -82,6 +85,7 @@ const CreateReview = ({
         <label htmlFor='body'>Write Your Review:</label>
         <br />
         <input
+          className='create-review__body-input'
           value={body}
           type='text'
           id='body'
@@ -94,6 +98,7 @@ const CreateReview = ({
         <label htmlFor='category'></label>
         <br />
         <select
+          className='create-review__category-dropdown'
           value={chosenCat}
           onChange={(event) => {
             setChosenCat(event.target.value);
@@ -113,6 +118,7 @@ const CreateReview = ({
         </select>
 
         <select
+          className='create-review__img-dropdown'
           value={img}
           onChange={(event) => {
             setImg(event.target.value);
@@ -133,6 +139,7 @@ const CreateReview = ({
 
         <button className='btn create-review__btn'> Submit </button>
       </form>
+      <Footer className='create-review__footer' />
     </div>
   );
 };
