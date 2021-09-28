@@ -67,7 +67,7 @@
 
 .home__single-review {
   height: 10rem;
-  background-color: var(--color-white);
+  background-color: var(--secondary-color-lightest);
   background-size: 100%, auto;
   border-radius: 5px;
   text-align: left;

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Social from './Social';
 import '../Styles/Menu.css';
-import { IconButton } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 
 const Menu = ({ isOpen, setIsOpen }) => {
