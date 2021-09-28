@@ -1,31 +1,80 @@
-// import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// const axios = require('axios');
 import Social from './Social';
 import '../Styles/Menu.css';
+import { IconButton } from '@mui/material';
+import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
 
-const Menu = () => {
+const Menu = ({ isOpen, setIsOpen }) => {
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className='menu'>
+    <div className={isOpen ? 'menu' : 'menu-hidden'}>
       <Link to='/'>
-        <div className='close__menu'></div>
+        <IconButton
+          className={isOpen ? 'close-menu' : 'btn-hidden'}
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
+          <HighlightOffRoundedIcon size='large' />
+        </IconButton>
       </Link>
-      <h3 className='menu__title'> Menu Page</h3>
       <ul className='menu__list'>
-        <Link to='/'>
+        <Link
+          to='/'
+          className='menu__link'
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
           <li className='menu__item'> Home </li>
         </Link>
-        <Link to='/login'>
+        <Link
+          to='/login'
+          className='menu__link'
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
           <li className='menu__item'> Login </li>
         </Link>
-        <Link to='/categories'>
+        <Link
+          to='/categories'
+          className='menu__link'
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
           <li className='menu__item'> Categories </li>
         </Link>
-        <Link to='/users'>
+        <Link
+          to='/users'
+          className='menu__link'
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
           <li className='menu__item'> Our Users </li>
         </Link>
-        <Link to='/reviews'>
-          <li className='menu__item'> All reviews </li>
+        <Link
+          to='/reviews'
+          className='menu__link'
+          onClick={() => {
+            toggleMenu();
+          }}
+        >
+          <li
+            className='menu__item'
+            onClick={() => {
+              toggleMenu();
+            }}
+          >
+            {' '}
+            All reviews{' '}
+          </li>
         </Link>
       </ul>
       <Social className='menu__social' />

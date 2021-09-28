@@ -24,11 +24,17 @@ function App() {
     name: 'Paul Grump'
   });
   const [review, setReview] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className='app'>
-      <Nav loginUser={loginUser} setLoginUser={setLoginUser} />
-
+      <Nav
+        loginUser={loginUser}
+        setLoginUser={setLoginUser}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />;
       <Switch>
         <Route exact path='/'>
           <Home
