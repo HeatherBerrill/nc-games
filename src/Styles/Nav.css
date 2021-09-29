@@ -13,13 +13,25 @@
     'login-name menu social';
 }
 
+@media only screen and (min-width: 700px) {
+  .nav {
+    grid-template-columns: 46% 9% 50%;
+    grid-template-rows: 65% 20% 15%;
+  }
+
+  .nav_social {
+    padding: 1rem;
+  }
+}
+
 .dice {
   align-self: center;
   height: 25vh;
-  width: 100vw;
+  width: auto;
 }
 
-.logo_box {
+.dice_box {
+  background-color: black;
   overflow: hidden;
   display: flex;
   grid-area: logo;

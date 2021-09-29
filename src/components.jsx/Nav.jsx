@@ -14,7 +14,7 @@ const Nav = ({ loginUser, isOpen, setIsOpen }) => {
 
   return (
     <div className='nav'>
-      <div className='logo_box'>
+      <div className='dice_box'>
         <img src={background} className='dice' alt='dice'></img>
       </div>
       <div className='links'>
