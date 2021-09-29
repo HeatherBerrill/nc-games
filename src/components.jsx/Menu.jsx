@@ -20,7 +20,7 @@ const Menu = ({ isOpen, setIsOpen }) => {
         >
           <HighlightOffRoundedIcon
             className={isOpen ? 'close-menu' : 'btn-hidden'}
-            sx={{ margin: 15, color: 'white', size: 'large' }}
+            style={{ color: 'white', size: 'large' }}
           />
         </IconButton>
       </Link>
