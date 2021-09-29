@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Categories.css';
+import '../Styles/index.css';
 import { getCategories } from '../api';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
 
 const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
   useEffect(() => {
@@ -13,7 +15,15 @@ const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
     });
   }, []);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className='categories'>
@@ -23,10 +33,15 @@ const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
           return (
             <li className='cat__item' key={category.slug}>
               <h4 className='cat__name'> {category.slug}</h4>
-              <Link to={`/categories/${category.slug}`}>
-                <button className='btn categories__btn'>
+              <Link to={`/categories/${category.slug}`} className='btn_link'>
+                <Button
+                  //  className='btn categories__btn'
+                  variant='contained'
+                  color='primary'
+                  size='small'
+                >
                   Read Category Reviews
-                </button>
+                </Button>
               </Link>
             </li>
           );

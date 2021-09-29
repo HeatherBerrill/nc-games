@@ -8,9 +8,11 @@ import {
 } from '../api';
 import { useParams, useHistory } from 'react-router-dom';
 import '../Styles/Single-review.css';
+import '../Styles/index.css';
 import Footer from './Footer';
 import ReviewVotes from './Review-votes';
 import CommentVotes from './Comment-votes';
+import { Button, CircularProgress } from '@mui/material';
 
 const SingleReview = ({
   loginUser,
@@ -80,7 +82,15 @@ const SingleReview = ({
     });
   };
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className='single-review'>
@@ -104,15 +114,18 @@ const SingleReview = ({
         </p>
         <p className='single-review__description'> {review.review_body}</p>
         <ReviewVotes className='single-review__votes' />
-        <button
+        <Button
           disabled={loginUser.username === review.owner ? false : true}
           onClick={() => {
             reviewToDelete(review.review_id);
           }}
-          className='btn single-review__delete-btn'
+          // className='btn single-review__delete-btn'
+          variant='contained'
+          color='primary'
+          size='small'
         >
           Delete
-        </button>
+        </Button>
       </div>
       <form className='single-review__comment-form' onSubmit={handleSubmit}>
         <label htmlFor='single-review__new-comment'>Add New Comment</label>
@@ -124,7 +137,10 @@ const SingleReview = ({
             setNewComment(event.target.value);
           }}
         ></input>
-        <button> Submit </button>
+        <Button variant='contained' color='primary' size='small'>
+          {' '}
+          Submit{' '}
+        </Button>
       </form>
       <div> </div>
       <ul className='single-review__comments-list'>
@@ -137,15 +153,18 @@ const SingleReview = ({
                 className='single-comment__votes'
                 comment_id={comment.comment_id}
               />
-              <button
+              <Button
                 disabled={loginUser.username === comment.author ? false : true}
                 onClick={() => {
                   commentToDelete(comment.comment_id);
                 }}
-                className='btn single-comment__delete-btn'
+                // className='btn single-comment__delete-btn'
+                variant='contained'
+                color='primary'
+                size='small'
               >
                 Delete
-              </button>
+              </Button>
             </li>
           );
         })}

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
+import '../Styles/index.css';
 import Footer from './Footer';
 import { getVotedReviews } from '../api';
-import { Button } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
 
 const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
   useEffect(() => {
@@ -14,7 +15,15 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
     });
   }, [setReviews]);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className='home'>
@@ -37,10 +46,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
             return (
               <li className={'home__single-review'} key={review.review_id}>
                 <h3 className='home__review-category'> {review.category}</h3>
-                <Link
-                  to={`/reviews/${review.review_id}`}
-                  style={{ textDecoration: 'none' }}
-                >
+                <Link to={`/reviews/${review.review_id}`} className='btn_link'>
                   <Button
                     variant='contained'
                     color='primary'
@@ -63,7 +69,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
             );
           })}
         </ul>
-        <Link to={'/reviews'} style={{ textDecoration: 'none' }}>
+        <Link to={'/reviews'} className='btn_link'>
           <Button
             variant='contained'
             color='primary'

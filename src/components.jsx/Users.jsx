@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Users.css';
+import '../Styles/index.css';
 import { getUsers } from '../api';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
 
 const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
   useEffect(() => {
@@ -13,7 +15,15 @@ const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
     });
   }, [setUsers]);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className='users'>
@@ -23,8 +33,15 @@ const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
           return (
             <li className='users__single' key={user.username}>
               <h3 className='users__username'> {user.username}</h3>
-              <Link to={`/users/${user.username}`}>
-                <button className='btn users-single__btn'>View User</button>
+              <Link to={`/users/${user.username}`} className='btn_link'>
+                <Button
+                  // className='btn users-single__btn'
+                  variant='contained'
+                  color='primary'
+                  size='small'
+                >
+                  View User
+                </Button>
               </Link>
             </li>
           );

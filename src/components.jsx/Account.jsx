@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { getUsers } from '../api';
 import '../Styles/Account.css';
+import '../Styles/index.css';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
+
 const Account = ({
   setUsers,
   users,
@@ -18,7 +21,15 @@ const Account = ({
     });
   }, [loginUser, setUsers]);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className='account'>
@@ -31,14 +42,17 @@ const Account = ({
           return (
             <li className='account__user' key={user.username}>
               <h3 className='account-user__list'> {user.username}</h3>
-              <button
-                className='btn switch-user__btn'
+              <Button
+                // className='btn switch-user__btn'
+                variant='contained'
+                color='primary'
+                size='small'
                 onClick={() => {
                   setLoginUser(user);
                 }}
               >
                 Switch to User
-              </button>
+              </Button>
             </li>
           );
         })}

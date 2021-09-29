@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../Styles/Single-user.css';
+import '../Styles/index.css';
 import { getSingleUser } from '../api';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
 
 const SingleUser = ({ users, isLoading, setIsLoading }) => {
   const { username } = useParams();
@@ -16,7 +18,15 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
     });
   }, []);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className='single-user'>
@@ -29,8 +39,16 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
           className='user-image-box'
         ></img>
       </div>
-      <Link to='/users'>
-        <button className='btn single-user__back-btn'> Back </button>
+      <Link to='/users' className='btn_link'>
+        <Button
+          // className='btn single-user__back-btn'
+          variant='contained'
+          color='primary'
+          size='small'
+        >
+          {' '}
+          Back{' '}
+        </Button>
       </Link>
       <Footer className='single-user__footer' />
     </div>

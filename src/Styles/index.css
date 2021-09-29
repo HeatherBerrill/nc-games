@@ -41,3 +41,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.loading_screen {
+  position: absolute;
+  background-color: var(--secondary-color-light);
+  background-size: 100%;
+  width: 100vw;
+  height: 75vh;
+  top: 25vh;
+}
+
+.spinner-box {
+  margin: 50% 45%;
+}
+
+.btn_link {
+  text-decoration: none;
+}
