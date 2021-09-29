@@ -1,6 +1,6 @@
 .single-user {
   width: 100vw;
-  height: 87vh;
+  height: 75vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
@@ -24,13 +24,11 @@
 
 .single-user__back-btn {
   grid-area: single-user-btn;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
 }
 
 .user-image-box {
-  height: auto;
+  height: 11rem;
+  object-fit: cover;
   width: 60%;
   padding: 1rem;
 }

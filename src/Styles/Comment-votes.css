@@ -10,10 +10,6 @@
 
 .comment-btn__votes {
   grid-area: votes-button;
-  border-radius: 10px;
-  align-self: center;
-  margin: 0.2rem;
-  padding: 1px, 2px;
 }
 
 .comment__votes-count {

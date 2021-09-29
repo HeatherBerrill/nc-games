@@ -45,8 +45,6 @@ const SingleCategory = ({
     );
   }
 
-  console.log(reviews, 'in get');
-
   return (
     <div className='single-category'>
       <div className='single-category__content'>

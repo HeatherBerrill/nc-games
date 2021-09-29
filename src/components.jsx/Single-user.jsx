@@ -41,7 +41,7 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
       </div>
       <Link to='/users' className='btn_link'>
         <Button
-          // className='btn single-user__back-btn'
+          className='btn single-user__back-btn'
           variant='contained'
           color='primary'
           size='small'

@@ -10,9 +10,6 @@
 
 .btn__votes {
   grid-area: votes-button;
-  border-radius: 10px;
-  margin: 0.5rem;
-  align-self: center;
 }
 
 .review__votes-count {

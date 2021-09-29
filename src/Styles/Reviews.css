@@ -9,7 +9,7 @@
   align-items: center;
 
   grid-template-columns: 100vw;
-  grid-template-rows: 4rem 2rem 2rem auto 4rem;
+  grid-template-rows: 3rem 3rem 3rem auto 4rem;
   justify-content: center;
 
   grid-template-areas:
@@ -21,15 +21,11 @@
 }
 .reviews__title {
   text-transform: uppercase;
-  padding: 2rem;
+  padding: 1rem;
   grid-area: reviews-title;
 }
 .reviews-new-review__btn {
   grid-area: new-review;
-  margin: 1rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.5rem;
 }
 
 .reviews-sort-form {
@@ -43,7 +39,7 @@
 
 .reviews__single {
   background-color: var(--color-white);
-  height: 5rem;
+  height: auto;
   width: 70vw;
   background-color: var(--color-white);
   border-radius: 5px;
@@ -75,7 +71,8 @@
 }
 
 .reviews-single__title {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
+  margin-bottom: 3rem;
   grid-area: title;
 }
 
@@ -87,12 +84,10 @@
 
 .reviews-single__btn {
   grid-area: list-button;
-  padding: 0.5rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.5rem;
 }
 
 .reviews__owner {
+  text-transform: uppercase;
   grid-area: owner;
   padding: 0.5rem 0;
   font-size: 0.5rem;

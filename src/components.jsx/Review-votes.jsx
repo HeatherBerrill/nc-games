@@ -38,11 +38,12 @@ const ReviewVotes = (review) => {
       <p className='review__votes-count'> Votes: {votes + voteChange} </p>
       {hasError && <p> Sorry. There has been a problem, try again later...</p>}
       <Button
-        //  className='btn btn__votes'
+        className='btn btn__votes'
         variant='contained'
         color='primary'
         size='small'
         onClick={incVotes}
+        style={{ margin: 12 }}
       >
         Vote
       </Button>

@@ -103,10 +103,10 @@ const SingleReview = ({
         ></img>
         <p className='single-review__owner'> Created by:{review.owner}</p>
         <p className='single-review__designer'>
-          Game designer:{review.designer}
+          Game designer: {review.designer}
         </p>
         <p className='single-review__created-at'>
-          Created on:{review.created_at}
+          Created on: {review.created_at}
         </p>
         <p className='single-review__category'>Category:{review.category}</p>
         <p className='single-review__comment-count'>
@@ -119,10 +119,11 @@ const SingleReview = ({
           onClick={() => {
             reviewToDelete(review.review_id);
           }}
-          // className='btn single-review__delete-btn'
+          className='btn single-review__delete-btn'
           variant='contained'
           color='primary'
           size='small'
+          style={{ margin: 2 }}
         >
           Delete
         </Button>
@@ -137,9 +138,13 @@ const SingleReview = ({
             setNewComment(event.target.value);
           }}
         ></input>
-        <Button variant='contained' color='primary' size='small'>
-          {' '}
-          Submit{' '}
+        <Button
+          variant='contained'
+          color='primary'
+          size='small'
+          style={{ margin: 5 }}
+        >
+          Submit
         </Button>
       </form>
       <div> </div>
@@ -158,7 +163,7 @@ const SingleReview = ({
                 onClick={() => {
                   commentToDelete(comment.comment_id);
                 }}
-                // className='btn single-comment__delete-btn'
+                className='btn single-comment__delete-btn'
                 variant='contained'
                 color='primary'
                 size='small'

@@ -1,47 +1,58 @@
 .single-review {
   width: 100vw;
-  min-height: 82vh;
+  min-height: 75vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 4rem 12rem 5rem auto;
+  grid-template-rows: 2rem auto auto 8rem;
   justify-content: center;
 
   grid-template-areas:
     'single-review-title '
     'single-review-content'
-    'single-review-form'
-    'single-review-comments';
+    'single-review-comments'
+    'single-review-form';
 }
 .single-review-page__title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
   margin: 1rem;
   grid-area: single-review-title;
+}
+
+/* new comment form */
+
+.single-review__comment-form {
+  margin: 0.5rem;
+  margin-bottom: 3rem;
+  grid-area: single-review-form;
+  padding: 1rem;
 }
 
 /* review content  */
 
 .single-review__content {
-  height: 12rem;
-  border-radius: 5px;
-  background-color: var(--color-white);
+  height: auto;
+  border-radius: 3px;
+  background-color: var(--secondary-color-lightest);
   margin: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 0.5rem;
   grid-area: single-review-content;
   align-items: center;
   display: grid;
   grid-template-columns: 25% 10% 65%;
-  grid-template-rows: 10% 10% 10% 10% auto 15% 10%;
+  grid-template-rows: 5% 5% 5% 5% 55% 15% 10%;
   grid-template-areas:
     'img designer designer '
     'img created-at created-at'
     'img category category'
     'img owner owner'
     'description description description'
-    'votes votes votes'
+    'votes votes delete'
     'comment-count comment-count delete';
 }
 
@@ -49,18 +60,21 @@
   grid-area: created-at;
   text-align: left;
   padding: 0.25rem;
+  margin: 0.5rem;
 }
 
 .single-review__designer {
   grid-area: designer;
   text-align: left;
   padding: 0.25rem;
+  margin: 0.5rem;
 }
 
 .single-review__category {
   grid-area: category;
   padding: 0.25rem;
   text-align: left;
+  margin: 0.5rem;
 }
 
 .single-review__votes {
@@ -74,35 +88,33 @@
   grid-area: img;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 80%;
+  margin: 0.5rem;
 }
 
 .single-review__owner {
+  margin: 0.5rem;
   grid-area: owner;
   text-align: left;
   padding: 0.25rem;
 }
 .single-review__description {
   grid-area: description;
-  border: solid 1px var(--secondary-color-light);
   border-radius: 3px;
   text-align: left;
-  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 0.6rem;
 }
 .single-review__comment-count {
   grid-area: comment-count;
   text-align: left;
   padding: 0.25rem;
   font-size: 0.75rem;
+  margin: 0.5rem;
 }
 
 .single-review__delete-btn {
   grid-area: delete;
-  border-radius: 15px;
-  padding: 3px 12px;
-  margin: 0.5rem;
-  width: 5rem;
-  align-self: center;
   justify-self: end;
 }
 
@@ -110,28 +122,20 @@
   background-color: silver;
 }
 
-/* new comment form */
-
-.single-review__comment-form {
-  margin: 2rem;
-  grid-area: single-review-form;
-  padding: 1rem;
-}
-
 /* list of comments  */
 
 .single-review__comments-list {
   height: auto;
   grid-area: single-review-comments;
+  margin-bottom: 2rem;
 }
 
 .single-comment {
-  background-color: var(--color-white);
-  border-radius: 5px;
-  height: 5rem;
-  width: 70%;
+  background-color: var(--secondary-color-lightest);
+  border-radius: 3px;
+  height: 8rem;
+  width: 80%;
   padding: 1rem;
-  margin: 1rem;
   margin-top: 1.5rem;
   font-size: 0.5rem;
   text-align: left;
@@ -153,25 +157,16 @@
 
 .single-comment__body {
   grid-area: body;
-  font-size: 0.5rem;
+  font-size: 0.65rem;
 }
 
 .single-comment__delete-btn {
   grid-area: delete;
-  border-radius: 15px;
-  padding: 3px 12px;
-  margin: 0.5rem;
-  align-self: center;
   justify-self: end;
 }
 
 .single-comment__delete-btn {
   grid-area: delete;
-  border-radius: 15px;
-  padding: 3px 12px;
-  margin: 0.5rem;
-  align-self: center;
-  justify-self: end;
 }
 
 .single-comment__delete-btn:disabled {

@@ -51,6 +51,7 @@ const CommentVotes = ({ comment_id }) => {
         variant='contained'
         color='primary'
         size='small'
+        style={{ margin: 10 }}
         onClick={incCommentVotes}
       >
         Vote

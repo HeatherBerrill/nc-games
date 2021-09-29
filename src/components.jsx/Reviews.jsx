@@ -46,6 +46,7 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
           variant='contained'
           color='primary'
           size='small'
+          style={{ margin: 3 }}
         >
           Add New Review
         </Button>
@@ -69,13 +70,14 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
           <option value='votes'> Most voted </option>
         </select>
         <Button
-          // className='btn sort__btn'
+          className='btn sort__btn'
           variant='contained'
           color='primary'
           size='small'
+          style={{ margin: 10, padding: 1 }}
+          type='submit'
         >
-          {' '}
-          Sort{' '}
+          Sort
         </Button>
       </form>
 
@@ -86,10 +88,11 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
               <h4 className='reviews__category'> {review.category}</h4>
               <Link to={`/reviews/${review.review_id}`} className='btn_link'>
                 <Button
-                  //  className='btn reviews-single__btn'
+                  className='btn reviews-single__btn'
                   variant='contained'
                   color='primary'
                   size='small'
+                  style={{ margin: 10 }}
                 >
                   Read Review
                 </Button>

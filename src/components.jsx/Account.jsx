@@ -43,13 +43,14 @@ const Account = ({
             <li className='account__user' key={user.username}>
               <h3 className='account-user__list'> {user.username}</h3>
               <Button
-                // className='btn switch-user__btn'
+                className='btn switch-user__btn'
                 variant='contained'
                 color='primary'
                 size='small'
                 onClick={() => {
                   setLoginUser(user);
                 }}
+                style={{ margin: 5 }}
               >
                 Switch to User
               </Button>

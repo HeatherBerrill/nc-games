@@ -7,7 +7,7 @@
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 35% auto;
+  grid-template-rows: 40% auto;
   justify-content: center;
 
   grid-template-areas:
@@ -16,10 +16,11 @@
 }
 
 .single-category__content {
-  background-color: var(--color-white);
+  background-color: var(--secondary-color-lightest);
   height: 10rem;
   margin: 2rem;
-  border-radius: 5px;
+  padding: 0.75rem;
+  border-radius: 3px;
   grid-area: category-content;
   display: grid;
   grid-template-columns: 100%;
@@ -55,13 +56,14 @@
 }
 
 .single-category__single-review {
-  background-color: var(--color-white);
+  background-color: var(--secondary-color-lightest);
   min-height: 7rem;
   width: 80%;
   text-align: left;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
+  border-radius: 3px;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 25% 25% 25% 25%;
@@ -74,18 +76,16 @@
 
 .single-category__review-list-thumbnail {
   grid-area: review-img;
-  height: 3rem;
+  height: 3.5rem;
   width: auto;
 }
 
 .single-category__review-btn {
   grid-area: review-btn;
-  border-radius: 15px;
-  padding: 2px 8px;
 }
 
 .single-category__review-owner {
-  padding: 0.25rem;
+  text-transform: uppercase;
   grid-area: review-owner;
   font-size: 0.75rem;
 }
@@ -99,4 +99,5 @@
   grid-area: review-title;
   text-transform: uppercase;
   font-size: 0.75rem;
+  margin-bottom: 2rem;
 }
