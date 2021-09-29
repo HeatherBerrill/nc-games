@@ -13,10 +13,12 @@
   --tertiary-color-light: #f3b57f;
   --secondary-color: #024059;
   /* --secondary-color-light: #9bcadd; */
-  --secondary-color-light: #98c1d9;
-  --secondary-color-lightest: #b3d2e4;
+  /* --secondary-color-light: #98c1d9; */
+  --secondary-color-light: #adb2b6;
+  /* --secondary-color-lightest: #b3d2e4; */
+  --secondary-color-lightest: #c8c9ca;
 
-  --primary-color: #906099;
+  --primary-color: #714c77;
 
   /* color scheme 2 */
   --color-blue-light: #50c6c7;

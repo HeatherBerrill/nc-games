@@ -1,9 +1,6 @@
-// import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// const axios = require('axios');
 import Social from './Social';
 import '../Styles/Footer.css';
-import logo from '../Images/dice.png';
+import background from '../Images/dice_crop.jpg';
 
 const Footer = () => {
   return (
@@ -12,7 +9,7 @@ const Footer = () => {
         <Social className='footer_social' />
       </div>
 
-      <img src={logo} className='footer_logo' alt='logo'></img>
+      <img src={background} className='footer_logo' alt='logo'></img>
     </div>
   );
 };

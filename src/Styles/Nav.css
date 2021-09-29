@@ -1,59 +1,63 @@
 .nav {
   display: grid;
-  background-color: var(--color-white);
   width: 100vw;
   height: 25vh;
+  background-color: var(--secondary-color-lightest);
   top: 0;
   position: absolute;
-  grid-template-columns: 40% 20% 40%;
-  grid-template-rows: auto 15% 15%;
+  grid-template-columns: 46% 14% 40%;
+  grid-template-rows: 65% 15% 20%;
   grid-template-areas:
     'logo logo logo'
     'links menu social'
     'login-name menu social';
 }
 
-.logo {
-  height: 70px;
-  width: auto;
+.dice {
+  align-self: center;
+  height: 25vh;
+  width: 100vw;
 }
 
 .logo_box {
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
   grid-area: logo;
-  background-color: var(--secondary-color-light);
 }
 
 .nav_social {
   grid-area: social;
-  /* background-color: var(--color-white); */
+  background-color: var(--secondary-color-lightest);
 }
 
 .menu__icon {
   grid-area: menu;
-  margin: 20px;
   background-color: var(--primary-color);
-  height: 1rem;
 }
 
 .links {
   display: flex;
   justify-content: space-around;
   grid-area: links;
-  padding: 5px;
-  /* background-color: var(--color-white); */
+  margin-top: 5px;
+  padding: 2px;
+  background-color: var(--secondary-color-lightest);
 }
-.link {
+
+/* .link {
   color: var(--color-black);
-}
+} */
+
 .nav_link {
   text-decoration: none;
 }
 
 .login-name {
   grid-area: login-name;
-  font-size: 0.75rem;
-  padding: 4px 0.5rem;
+  /* text-transform: uppercase; */
+  font-size: 0.7rem;
+  margin: 2px;
+  margin-top: 12px;
+  margin-left: 10px;
+  background-color: var(--secondary-color-lightest);
 }

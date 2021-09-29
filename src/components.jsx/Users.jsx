@@ -27,7 +27,7 @@ const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
 
   return (
     <section className='users'>
-      <h1 className='users__title'> Our Fans </h1>
+      <h1 className='users__title'> Our Users </h1>
       <ul className='users__list'>
         {users.map((user) => {
           return (

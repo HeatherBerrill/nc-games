@@ -56,7 +56,9 @@
 }
 
 .rated-reviews__title {
-  text-align: left;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  text-align: center;
   margin-left: 1rem;
 }
 
@@ -69,7 +71,7 @@
   height: 10rem;
   background-color: var(--secondary-color-lightest);
   background-size: 100%, auto;
-  border-radius: 5px;
+  border-radius: 3px;
   text-align: left;
   display: grid;
   grid-template-columns: 40% 60%;

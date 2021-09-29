@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Social from './Social';
-import Menu from './Menu';
 import '../Styles/Nav.css';
-import logo from '../Images/dice.png';
+import background from '../Images/dice_crop.jpg';
 import { IconButton } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Nav = ({ loginUser, isOpen, setIsOpen }) => {
   const toggleMenu = () => {
@@ -15,22 +15,25 @@ const Nav = ({ loginUser, isOpen, setIsOpen }) => {
   return (
     <div className='nav'>
       <div className='logo_box'>
-        <img src={logo} className='logo' alt='logo'></img>
+        <img src={background} className='dice' alt='dice'></img>
       </div>
       <div className='links'>
         <Link to='/' className='nav_link'>
-          <p className='link'> Home</p>
+          <HomeIcon color='primary' />
         </Link>
         <Link to='/account' className='nav_link'>
-          <p className='link'> Account </p>
+          <AccountCircleIcon color='primary' />
         </Link>
       </div>
-      <p className='login-name'> Logged in as {loginUser.username}</p>
+      <p className='login-name'>
+        Logged in as {loginUser.username.toUpperCase()}
+      </p>
       <div>
         <IconButton
           onClick={() => {
             toggleMenu();
           }}
+          className='menu__icon'
         >
           <MenuRoundedIcon color='primary' size='large' />
         </IconButton>

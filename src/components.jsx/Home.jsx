@@ -40,7 +40,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
       </div>
 
       <div className='home__reviews-list-container'>
-        <p className='rated-reviews__title'> most voted reviews...</p>
+        <p className='rated-reviews__title'> most voted reviews</p>
         <ul className='reviews__list'>
           {reviews.map((review) => {
             return (

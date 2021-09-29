@@ -14,12 +14,14 @@ const Menu = ({ isOpen, setIsOpen }) => {
     <div className={isOpen ? 'menu' : 'menu-hidden'}>
       <Link to='/'>
         <IconButton
-          className={isOpen ? 'close-menu' : 'btn-hidden'}
           onClick={() => {
             toggleMenu();
           }}
         >
-          <HighlightOffRoundedIcon size='large' />
+          <HighlightOffRoundedIcon
+            className={isOpen ? 'close-menu' : 'btn-hidden'}
+            sx={{ margin: 15, color: 'white', size: 'large' }}
+          />
         </IconButton>
       </Link>
       <ul className='menu__list'>
@@ -31,15 +33,6 @@ const Menu = ({ isOpen, setIsOpen }) => {
           }}
         >
           <li className='menu__item'> Home </li>
-        </Link>
-        <Link
-          to='/login'
-          className='menu__link'
-          onClick={() => {
-            toggleMenu();
-          }}
-        >
-          <li className='menu__item'> Login </li>
         </Link>
         <Link
           to='/categories'
@@ -57,7 +50,7 @@ const Menu = ({ isOpen, setIsOpen }) => {
             toggleMenu();
           }}
         >
-          <li className='menu__item'> Our Users </li>
+          <li className='menu__item'> Users </li>
         </Link>
         <Link
           to='/reviews'
@@ -77,7 +70,9 @@ const Menu = ({ isOpen, setIsOpen }) => {
           </li>
         </Link>
       </ul>
-      <Social className='menu__social' />
+      <div className='menu-social__container'>
+        <Social className='menu__social' />
+      </div>
     </div>
   );
 };
