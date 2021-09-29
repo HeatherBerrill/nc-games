@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../Styles/Single-category.css';
+import '../Styles/index.css';
 import { getCategoryReviews, getCategories } from '../api';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
+
 const SingleCategory = ({
   categories,
   setCategories,
@@ -32,7 +35,15 @@ const SingleCategory = ({
     });
   }, [slug]);
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   console.log(reviews, 'in get');
 
@@ -43,11 +54,15 @@ const SingleCategory = ({
         <p className='single-category__description'>
           Description: {category.description}
         </p>
-        <Link to='/reviews/create-review'>
-          <button className='btn single-category__add-review-btn'>
-            {' '}
-            Add New Review{' '}
-          </button>
+        <Link to='/reviews/create-review' className='btn_link'>
+          <Button
+            className='btn single-category__add-review-btn'
+            variant='contained'
+            color='primary'
+            size='small'
+          >
+            Add New Review
+          </Button>
         </Link>
       </div>
       <ul className='single-category__reviews-list'>
@@ -57,10 +72,15 @@ const SingleCategory = ({
               className='single-category__single-review'
               key={review.review_id}
             >
-              <Link to={`/reviews/${review.review_id}`}>
-                <button className=' btn single-category__review-btn'>
+              <Link to={`/reviews/${review.review_id}`} className='btn_link'>
+                <Button
+                  className=' btn single-category__review-btn'
+                  variant='contained'
+                  color='primary'
+                  size='small'
+                >
                   Read Review
-                </button>
+                </Button>
               </Link>
               <h3 className='single-category__review-title'>{review.title}</h3>
 

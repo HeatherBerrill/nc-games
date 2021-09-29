@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSortedReviews } from '../api';
 import '../Styles/Reviews.css';
+import '../Styles/index.css';
 import { getReviews } from '../api';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
 
 const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
   const [newSort, setNewSort] = useState('');
@@ -25,13 +27,28 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
     });
   };
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className='reviews'>
       <h3 className='reviews__title'> Reviews </h3>
-      <Link to='/reviews/create-review'>
-        <button className='btn reviews-new-review__btn'>Add New Review</button>
+      <Link to='/reviews/create-review' className='btn_link'>
+        <Button
+          className='btn reviews-new-review__btn'
+          variant='contained'
+          color='primary'
+          size='small'
+        >
+          Add New Review
+        </Button>
       </Link>
       <label htmlFor='sort-dropdown'></label>
       <br />
@@ -51,7 +68,15 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
           <option value='comment_count'> Most Comments </option>
           <option value='votes'> Most voted </option>
         </select>
-        <button className='btn sort__btn'> Sort </button>
+        <Button
+          // className='btn sort__btn'
+          variant='contained'
+          color='primary'
+          size='small'
+        >
+          {' '}
+          Sort{' '}
+        </Button>
       </form>
 
       <ul className='reviews__list'>
@@ -59,8 +84,15 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
           return (
             <li className='reviews__single' key={review.review_id}>
               <h4 className='reviews__category'> {review.category}</h4>
-              <Link to={`/reviews/${review.review_id}`}>
-                <button className='btn reviews-single__btn'>Read Review</button>
+              <Link to={`/reviews/${review.review_id}`} className='btn_link'>
+                <Button
+                  //  className='btn reviews-single__btn'
+                  variant='contained'
+                  color='primary'
+                  size='small'
+                >
+                  Read Review
+                </Button>
               </Link>
               <p className='reviews-single__title'> {review.title} </p>
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../Styles/Comment-votes.css';
 import { getComments, updateCommentVotes } from '../api';
+import { Button } from '@mui/material';
 
 const CommentVotes = ({ comment_id }) => {
   const { review_id } = useParams();
@@ -45,9 +46,15 @@ const CommentVotes = ({ comment_id }) => {
     <div className='comment__votes'>
       <p className='comment__votes-count'> Votes: {votes + voteChange} </p>
       {hasError && <p> Sorry. There has been a problem, try again later...</p>}
-      <button className='btn comment-btn__votes' onClick={incCommentVotes}>
+      <Button
+        className='btn comment-btn__votes'
+        variant='contained'
+        color='primary'
+        size='small'
+        onClick={incCommentVotes}
+      >
         Vote
-      </button>
+      </Button>
     </div>
   );
 };

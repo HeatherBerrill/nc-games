@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 :root {
   --color-grey-dark: #313030;
   --color-grey-light: #5c5b5b;
@@ -10,8 +12,13 @@
   --tertiary-color: #f28729;
   --tertiary-color-light: #f3b57f;
   --secondary-color: #024059;
-  --secondary-color-light: #9bcadd;
-  --primary-color: #ca0327;
+  /* --secondary-color-light: #9bcadd; */
+  /* --secondary-color-light: #98c1d9; */
+  --secondary-color-light: #adb2b6;
+  /* --secondary-color-lightest: #b3d2e4; */
+  --secondary-color-lightest: #c8c9ca;
+
+  --primary-color: #714c77;
 
   /* color scheme 2 */
   --color-blue-light: #50c6c7;
@@ -35,4 +42,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.loading_screen {
+  position: absolute;
+  background-color: var(--secondary-color-light);
+  background-size: 100%;
+  width: 100vw;
+  height: 75vh;
+  top: 25vh;
+}
+
+.spinner-box {
+  margin: 50% 45%;
+}
+
+.btn_link {
+  text-decoration: none;
 }
