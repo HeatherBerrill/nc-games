@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
 import '../Styles/index.css';
@@ -13,7 +13,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-  }, [setReviews]);
+  }, []);
 
   if (isLoading) {
     return (
@@ -60,7 +60,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
 
                 <p className='home__review-owner'> {review.owner} </p>
                 <img
-                  alt='review image'
+                  alt='review'
                   className='home__review-list-thumbnail'
                   src={review.review_img_url}
                 ></img>

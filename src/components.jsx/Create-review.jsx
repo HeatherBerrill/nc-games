@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { postReview } from '../api';
 import '../Styles/Create-review.css';
 import deckBuilding from '../Images/deckBuilding.jpg';

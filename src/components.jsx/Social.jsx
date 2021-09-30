@@ -7,10 +7,10 @@ import twitter from '../Images/twitter-logo.png';
 const Social = () => {
   return (
     <div className='social'>
-      <img src={facebook} className='facebook'></img>
-      <img src={insta} className='insta'></img>
-      <img src={reddit} className='reddit'></img>
-      <img src={twitter} className='twitter'></img>
+      <img src={facebook} className='facebook' alt='facebook_logo'></img>
+      <img src={insta} className='insta' alt='instagram_logo'></img>
+      <img src={reddit} className='reddit' alt='reddit_logo'></img>
+      <img src={twitter} className='twitter' alt='twitter_logo'></img>
     </div>
   );
 };

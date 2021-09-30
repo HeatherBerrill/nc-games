@@ -34,7 +34,7 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
         <h3 className='single-user__username'> {user.username}</h3>
         <p className='single-user__name'> Name: {user.name} </p>
         <img
-          alt='avatar image'
+          alt='avatar'
           src={user.avatar_url}
           className='user-image-box'
         ></img>
