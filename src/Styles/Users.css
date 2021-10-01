@@ -43,12 +43,24 @@
   padding: 4rem;
 }
 
-.users-single__btn {
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-}
-
 .users__username {
   padding: 0.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .users__list {
+    margin: 1rem auto;
+    width: 50%;
+  }
+
+  .users__single {
+    margin: 1rem 0.5rem 1rem 0rem;
+    padding-left: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .users__title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

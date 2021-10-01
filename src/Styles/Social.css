@@ -3,12 +3,6 @@
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (min-width: 700px) {
-  .social {
-    justify-content: space-around;
-    padding: 0.2rem;
-  }
-}
 
 .facebook {
   height: 1.5rem;
@@ -28,4 +22,36 @@
 .twitter {
   height: 1.5rem;
   width: auto;
+}
+
+@media only screen and (min-width: 700px) {
+  .social {
+    justify-content: space-around;
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+
+  .facebook {
+    height: 1.5rem;
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  .insta {
+    height: 1.5rem;
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  .reddit {
+    height: 1.5rem;
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  .twitter {
+    height: 1.5rem;
+    width: auto;
+    padding: 0.5rem;
+  }
 }

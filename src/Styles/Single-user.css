@@ -1,18 +1,23 @@
 .single-user {
   width: 100vw;
-  height: 65vh;
-  top: 25vh;
+  height: 72vh;
+  top: 25%;
   background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: auto 15%;
+  grid-template-rows: auto 15% 10%;
   justify-content: center;
 
   grid-template-areas:
     'single-user-content'
-    'single-user-btn';
+    'single-user-btn'
+    'single-user-footer';
+}
+
+.single-user__footer {
+  grid-area: single-user-footer;
 }
 .single-user__content {
   grid-area: single-user-content;
@@ -39,4 +44,10 @@
 
 .single-user__username {
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 700px) {
+  .user-image-box {
+    height: 20rem;
+  }
 }

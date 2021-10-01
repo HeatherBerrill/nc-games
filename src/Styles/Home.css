@@ -72,7 +72,6 @@
 .home__single-review {
   height: 10rem;
   background-color: var(--secondary-color-lightest);
-  background-size: 100%, auto;
   border-radius: 3px;
   text-align: left;
   display: grid;
@@ -125,4 +124,22 @@
   width: 80%;
   height: 80%;
   margin: 0.25rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .home__reviews-list-container {
+    width: 70%;
+    margin: 2rem auto;
+  }
+  .home__single-review {
+    padding-left: 3rem;
+  }
+
+  .menubar__categories {
+    padding-right: 30px;
+  }
+
+  .menubar__users {
+    padding-left: 30px;
+  }
 }

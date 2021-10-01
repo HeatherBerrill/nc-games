@@ -38,10 +38,9 @@
 }
 
 .reviews__single {
-  background-color: var(--color-white);
   height: auto;
   width: 70vw;
-  background-color: var(--color-white);
+  background-color: var(--secondary-color-lightest);
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem auto;
@@ -91,4 +90,11 @@
   grid-area: owner;
   padding: 0.5rem 0;
   font-size: 0.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .reviews__single {
+    width: 60vw;
+    padding-left: 5rem;
+  }
 }

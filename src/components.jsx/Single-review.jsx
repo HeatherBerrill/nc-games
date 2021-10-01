@@ -130,8 +130,9 @@ const SingleReview = ({
         </Button>
       </div>
       <form className='single-review__comment-form' onSubmit={handleSubmit}>
-        <label htmlFor='single-review__new-comment'>Add New Comment</label>
+        {/* <label htmlFor='single-review__new-comment'>Add New Comment</label> */}
         <input
+          placeholder='Add New Comment'
           type='text'
           id='new-comment'
           value={newComment}
@@ -144,7 +145,7 @@ const SingleReview = ({
           type='submit'
           color='primary'
           size='small'
-          style={{ margin: 5 }}
+          style={{ margin: 15 }}
         >
           Submit
         </Button>

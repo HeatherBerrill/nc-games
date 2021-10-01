@@ -28,7 +28,7 @@ const Nav = ({ loginUser, isOpen, setIsOpen }) => {
       <p className='login-name'>
         Logged in as {loginUser.username.toUpperCase()}
       </p>
-      <div>
+      <div className='menu-icon__container'>
         <IconButton
           onClick={() => {
             toggleMenu();
@@ -38,8 +38,9 @@ const Nav = ({ loginUser, isOpen, setIsOpen }) => {
           <MenuRoundedIcon color='primary' size='large' />
         </IconButton>
       </div>
-
-      <Social className='nav_social' />
+      <div className='nav_social'>
+        <Social />
+      </div>
     </div>
   );
 };

@@ -26,3 +26,19 @@
   height: 10vh;
   width: 100%;
 }
+
+@media only screen and (min-width: 700px) {
+  .footer {
+    grid-template-columns: 45% auto 30%;
+    grid-template-areas: 'logo . social';
+  }
+  .footer__social-container {
+    margin-right: 0.75rem;
+    align-self: center;
+    justify-content: flex-end;
+  }
+
+  .footer_logo {
+    width: 80%;
+  }
+}

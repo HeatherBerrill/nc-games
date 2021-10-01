@@ -34,12 +34,7 @@ const Users = ({ users, setUsers, isLoading, setIsLoading }) => {
             <li className='users__single' key={user.username}>
               <h3 className='users__username'> {user.username}</h3>
               <Link to={`/users/${user.username}`} className='btn_link'>
-                <Button
-                  // className='btn users-single__btn'
-                  variant='contained'
-                  color='primary'
-                  size='small'
-                >
+                <Button variant='contained' color='primary' size='small'>
                   View User
                 </Button>
               </Link>

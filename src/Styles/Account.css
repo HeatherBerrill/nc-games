@@ -42,3 +42,28 @@
   font-size: 1.2rem;
   color: var(--primary-color);
 }
+
+@media only screen and (min-width: 700px) {
+  .account {
+    grid-template-rows: 5% auto;
+    height: 100%;
+  }
+
+  .account__message {
+    margin-top: 3rem;
+  }
+
+  .switch-user__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0.5rem;
+  }
+
+  .account__user {
+    height: 8rem;
+    width: 12rem;
+  }
+}
