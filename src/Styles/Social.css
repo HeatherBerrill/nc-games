@@ -55,3 +55,25 @@
     padding: 0.5rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .social {
+    padding: 2rem;
+  }
+
+  .facebook {
+    height: 2rem;
+  }
+
+  .insta {
+    height: 2rem;
+  }
+
+  .reddit {
+    height: 2rem;
+  }
+
+  .twitter {
+    height: 2rem;
+  }
+}

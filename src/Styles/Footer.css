@@ -42,3 +42,13 @@
     width: 80%;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .footer {
+    grid-template-columns: 40% auto 30%;
+  }
+
+  .footer_logo {
+    width: 50%;
+  }
+}

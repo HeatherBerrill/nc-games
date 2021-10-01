@@ -85,3 +85,17 @@
     margin-top: 0.75rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .nav {
+    grid-template-columns: 25% 50% 25%;
+  }
+
+  .links {
+    margin-top: 0.25rem;
+  }
+
+  .login-name {
+    margin-left: 4rem;
+  }
+}

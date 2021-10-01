@@ -136,10 +136,20 @@
   }
 
   .menubar__categories {
-    padding-right: 30px;
+    padding-right: 3rem;
   }
 
   .menubar__users {
-    padding-left: 30px;
+    padding-left: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menubar__categories {
+    padding-right: 5rem;
+  }
+
+  .menubar__users {
+    padding-left: 5rem;
   }
 }

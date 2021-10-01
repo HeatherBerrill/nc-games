@@ -3,7 +3,7 @@
   background-color: var(--primary-color);
   display: grid;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 100vw;
   grid-template-rows: 50% 10% 35%;
   grid-template-areas:
@@ -45,19 +45,15 @@
   margin: 5rem;
 }
 
-.menu_item {
-  font-size: 1.5rem;
-  padding: 1rem;
-}
-
 .menu__link {
   text-decoration: none;
   color: white;
   margin: 1rem;
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 700px) {
-  .menu_item {
-    font-size: 5rem;
+  .menu__link {
+    font-size: 1.5rem;
   }
 }
