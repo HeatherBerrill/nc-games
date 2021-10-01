@@ -8,9 +8,10 @@
   grid-template-rows: 100%;
   grid-template-areas: 'logo social';
   width: 100vw;
-  height: 4rem;
+  height: 10vh;
 }
 .footer__social-container {
+  margin-right: 1rem;
   grid-area: social;
 }
 
@@ -20,7 +21,8 @@
 }
 
 .footer_logo {
+  margin-left: 0.5rem;
   grid-area: logo;
-  height: 4rem;
+  height: 10vh;
   width: 100%;
 }

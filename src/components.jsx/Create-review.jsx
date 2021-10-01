@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { postReview } from '../api';
+import { useHistory } from 'react-router-dom';
 import '../Styles/Create-review.css';
+import '../Styles/index.css';
 import deckBuilding from '../Images/deckBuilding.jpg';
 import dexterity from '../Images/dexterity.jpg';
 import engineBuilding from '../Images/engineBuilding.jpg';
@@ -9,6 +11,7 @@ import pushyourluck from '../Images/pushyourluck.jpg';
 import Strategy from '../Images/Strategy.jpg';
 import rollandwrite from '../Images/rollandwrite.jpg';
 import Footer from './Footer';
+import { Button, CircularProgress } from '@mui/material';
 
 const CreateReview = ({
   setReviews,
@@ -23,7 +26,7 @@ const CreateReview = ({
   const [body, setBody] = useState('');
   const [img, setImg] = useState('');
 
-  console.log(title, designer, chosenCat, body);
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     setIsLoading(true);
@@ -41,6 +44,7 @@ const CreateReview = ({
       setReviews((currReviews) => {
         return [...currReviews, reviewFromApi];
       });
+      history.push('/reviews');
       setIsLoading(false);
       setTitle('');
       setDesigner('');
@@ -50,16 +54,23 @@ const CreateReview = ({
     });
   };
 
-  if (isLoading) return <h3 className='loading'> Loading ...</h3>;
+  if (isLoading) {
+    return (
+      <section className='loading_screen'>
+        <div className='spinner-box'>
+          <CircularProgress color='primary' />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <div className='create-review'>
       <h3 className='create-review__title'> Create Review</h3>
       <form className='create-review__form' onSubmit={handleSubmit}>
-        <label htmlFor='title'>Title:</label>
-        <br />
         <input
           className='create-review__title-input'
+          placeholder='Review Title'
           value={title}
           type='text'
           id='title'
@@ -68,12 +79,10 @@ const CreateReview = ({
             setTitle(event.target.value);
           }}
         ></input>
-        <br />
-        <label htmlFor='designer'>Designer:</label>
-        <br />
         <input
           className='create-review__designer-input'
           value={designer}
+          placeholder='Game Designer '
           type='text'
           id='designer'
           name='designer'
@@ -81,11 +90,9 @@ const CreateReview = ({
             setDesigner(event.target.value);
           }}
         ></input>
-        <br />
-        <label htmlFor='body'>Write Your Review:</label>
-        <br />
         <input
           className='create-review__body-input'
+          placeholder='Write Review Here'
           value={body}
           type='text'
           id='body'
@@ -94,9 +101,6 @@ const CreateReview = ({
             setBody(event.target.value);
           }}
         ></input>
-        <br />
-        <label htmlFor='category'></label>
-        <br />
         <select
           className='create-review__category-dropdown'
           value={chosenCat}
@@ -137,7 +141,17 @@ const CreateReview = ({
           <option value={Strategy}>Strategy</option>
         </select>
 
-        <button className='btn create-review__btn'> Submit </button>
+        <Button
+          className='btn create-review__btn'
+          variant='contained'
+          type='submit'
+          color='primary'
+          size='small'
+          style={{ padding: 5, margin: 15 }}
+        >
+          {' '}
+          Submit{' '}
+        </Button>
       </form>
       <Footer className='create-review__footer' />
     </div>

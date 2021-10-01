@@ -7,12 +7,16 @@
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 40% auto;
+  grid-template-rows: auto auto;
   justify-content: center;
 
   grid-template-areas:
     'category-content'
     'reviews-list';
+}
+
+.single-category__reviews-list {
+  grid-area: reviews-list;
 }
 
 .single-category__content {
@@ -49,10 +53,6 @@
   grid-area: category-button;
   padding: 5px 15px;
   border-radius: 15px;
-}
-
-.single-category__reviews-list {
-  grid-area: reviews-list;
 }
 
 .single-category__single-review {

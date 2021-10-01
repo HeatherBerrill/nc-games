@@ -51,6 +51,7 @@ const SingleReview = ({
       setComments((currComments) => {
         return [...currComments, commentFromApi];
       });
+      setNewComment('');
       setIsLoading(false);
     });
   };
@@ -140,6 +141,7 @@ const SingleReview = ({
         ></input>
         <Button
           variant='contained'
+          type='submit'
           color='primary'
           size='small'
           style={{ margin: 5 }}

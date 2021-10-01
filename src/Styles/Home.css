@@ -23,6 +23,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .menubar__link {

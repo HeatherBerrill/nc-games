@@ -35,7 +35,7 @@ const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
           <p className='menubar__item menubar__reviews'> all reviews</p>
         </Link>
         <Link to='/users' className='menubar__link'>
-          <p className='menubar__item menubar__users'> our fans</p>
+          <p className='menubar__item menubar__users'> our users</p>
         </Link>
       </div>
 
