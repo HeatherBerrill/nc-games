@@ -1,13 +1,12 @@
 .home {
   position: absolute;
   background-color: var(--secondary-color-light);
-  background-size: 100%;
   display: grid;
   width: 100vw;
-  height: auto;
+  min-height: 100vh;
   top: 25vh;
   grid-template-columns: 100vw;
-  grid-template-rows: 8% auto 4rem;
+  grid-template-rows: 3rem auto 10vh;
   grid-template-areas:
     'menubar'
     'home-reviews-list'
@@ -66,7 +65,6 @@
 
 .home__footer {
   grid-area: footer;
-  bottom: 0;
 }
 
 .home__single-review {
@@ -145,11 +143,44 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .home {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
   .menubar__categories {
     padding-right: 5rem;
   }
 
   .menubar__users {
     padding-left: 5rem;
+  }
+
+  .menubar {
+    justify-content: center;
+  }
+
+  .menubar__reviews {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .reviews__list {
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .home__single-review {
+    width: 20%;
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .home__reviews-list-container {
+    margin: 2rem auto;
   }
 }

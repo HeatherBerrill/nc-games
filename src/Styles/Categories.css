@@ -1,6 +1,6 @@
 .categories {
   width: 100vw;
-  height: auto;
+  min-height: 100vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
@@ -54,5 +54,26 @@
   .cat__list {
     margin: auto 2.5rem;
     margin-bottom: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .categories {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cat__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5rem auto;
+  }
+
+  .cat__item {
+    text-transform: uppercase;
+    height: 7rem;
+    width: 25%;
   }
 }

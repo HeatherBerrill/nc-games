@@ -45,7 +45,7 @@ export const getSingleUser = async (username) => {
 };
 
 export const getVotedReviews = async () => {
-  const { data } = await gamesApi.get('/reviews?sortBy=votes&limit=3');
+  const { data } = await gamesApi.get('/reviews?sortBy=votes&limit=6');
   return data.reviews;
 };
 

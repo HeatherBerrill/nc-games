@@ -9,6 +9,8 @@
   grid-template-areas: 'logo social';
   width: 100vw;
   height: 10vh;
+  /* position: absolute;
+  bottom: 0; */
 }
 .footer__social-container {
   margin-right: 1rem;

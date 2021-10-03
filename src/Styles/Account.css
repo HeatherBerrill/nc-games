@@ -1,18 +1,19 @@
 .account {
   width: 100vw;
-  height: auto;
+  min-height: 100vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 10% auto;
+  grid-template-rows: 10% auto 10vh;
   justify-content: center;
 
   grid-template-areas:
     'account-message'
-    'switch-user-list';
+    'switch-user-list'
+    'footer';
 }
 .account__message {
   margin: 1.5rem;
@@ -43,6 +44,10 @@
   color: var(--primary-color);
 }
 
+.account__footer {
+  grid-area: footer;
+}
+
 @media only screen and (min-width: 700px) {
   .account {
     grid-template-rows: 5% auto;
@@ -65,5 +70,11 @@
   .account__user {
     height: 8rem;
     width: 12rem;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .account {
+    height: 100vh;
   }
 }

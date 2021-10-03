@@ -58,22 +58,31 @@
 
 @media only screen and (min-width: 1200px) {
   .social {
-    padding: 2rem;
+    padding-right: 2rem;
+    justify-content: flex-end;
   }
 
   .facebook {
     height: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .insta {
     height: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .reddit {
     height: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .twitter {
     height: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
