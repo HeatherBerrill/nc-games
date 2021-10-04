@@ -49,9 +49,7 @@ const SingleCategory = ({
     <div className='single-category'>
       <div className='single-category__content'>
         <h3 className='single-category__title'> {category.slug}</h3>
-        <p className='single-category__description'>
-          Description: {category.description}
-        </p>
+        <p className='single-category__description'>{category.description}</p>
         <Link to='/reviews/create-review' className='btn_link'>
           <Button
             className='btn single-category__add-review-btn'

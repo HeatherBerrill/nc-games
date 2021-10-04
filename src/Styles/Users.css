@@ -1,18 +1,19 @@
 .users {
   width: 100vw;
-  height: auto;
+  min-height: 100vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 8% auto;
+  grid-template-rows: 8% auto 10vh;
   justify-content: center;
 
   grid-template-areas:
     'users-title'
-    'users-list';
+    'users-list'
+    'footer';
 }
 
 .users__single {
@@ -36,6 +37,10 @@
   width: 80%;
 }
 
+.users__footer {
+  grid-area: footer;
+}
+
 .loading {
   position: absolute;
   top: 30vh;
@@ -48,6 +53,9 @@
 }
 
 @media only screen and (min-width: 700px) {
+  .users {
+    min-height: 65vh;
+  }
   .users__list {
     margin: 1rem auto;
     width: 50%;
@@ -62,5 +70,27 @@
   .users__title {
     font-size: 1.5rem;
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .users {
+    min-height: 75vh;
+  }
+
+  .users__title {
+    margin: 0.5rem;
+  }
+
+  .users__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .users__single {
+    height: 8rem;
+    width: 25%;
   }
 }

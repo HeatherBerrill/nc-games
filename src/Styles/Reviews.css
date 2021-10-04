@@ -98,3 +98,44 @@
     padding-left: 5rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .reviews {
+    grid-template-rows: 6rem 4rem 3rem auto 4rem;
+  }
+
+  .reviews__title {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .reviews__list {
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .reviews__single {
+    width: 35%;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .reviews__category {
+    font-size: 1.25rem;
+  }
+  .reviews-single__title {
+    font-size: 1rem;
+  }
+
+  .reviews__owner {
+    font-size: 1rem;
+  }
+
+  .reviews__votes {
+    font-size: 1rem;
+  }
+}

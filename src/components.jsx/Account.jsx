@@ -34,7 +34,7 @@ const Account = ({
   return (
     <div className='account'>
       <h3 className='account__message'>
-        You are logged in as{' '}
+        You are logged in as
         <span className='bold__username'>{loginUser.username}</span>
       </h3>
       <ul className='switch-user__list'>

@@ -7,14 +7,15 @@
   display: grid;
   text-align: center;
   grid-template-columns: 100vw;
-  grid-template-rows: 3rem auto auto 8rem;
+  grid-template-rows: 3rem auto auto 8rem 10vh;
   justify-content: center;
 
   grid-template-areas:
     'single-review-title '
     'single-review-content'
     'single-review-comments'
-    'single-review-form';
+    'single-review-form'
+    'footer';
 }
 .single-review-page__title {
   font-size: 0.75rem;
@@ -22,6 +23,10 @@
 
   margin: 1rem;
   grid-area: single-review-title;
+}
+
+.single-review__footer {
+  grid-area: footer;
 }
 
 /* new comment form */
@@ -196,5 +201,73 @@
   .single-comment {
     width: 50%;
     margin: 1rem auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .single-review {
+    text-align: left;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 4rem auto 7rem 10vh;
+    justify-content: center;
+
+    grid-template-areas:
+      'single-review-title single-review-comments '
+      'single-review-content single-review-comments'
+      'single-review-form single-review-comments'
+      'footer footer';
+  }
+
+  .single-review-page__title {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .single-review__content {
+    width: 90%;
+  }
+
+  .single-comment {
+    width: 60%;
+    margin: 0.5rem;
+  }
+
+  .single-review__content {
+    margin: 1.5rem;
+    margin-left: 2rem;
+  }
+  .single-review__description {
+    font-size: 1rem;
+  }
+
+  .single-review__designer {
+    font-size: 0.75rem;
+  }
+
+  .single-review__category {
+    font-size: 0.75rem;
+  }
+
+  .single-review__owner {
+    font-size: 0.75rem;
+  }
+  .single-review__created-at {
+    font-size: 0.75rem;
+  }
+
+  .single-review__comment-form {
+    margin: 1rem;
+  }
+
+  .single-review__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .single-review__comments-list {
+    justify-content: flex-start;
+    margin-top: 7rem;
+    margin-left: 0;
   }
 }

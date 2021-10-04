@@ -52,7 +52,6 @@ const Reviews = ({ reviews, setReviews, isLoading, setIsLoading }) => {
         </Button>
       </Link>
       <label htmlFor='sort-dropdown'></label>
-      <br />
       <form className='reviews-sort-form' onSubmit={sortReviews}>
         <select
           type='dropdown'

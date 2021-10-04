@@ -57,3 +57,18 @@
     font-size: 1.5rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .menu-social__container {
+    display: flex;
+    justify-content: center;
+  }
+  .social {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .menu {
+    justify-content: flex-end;
+  }
+}

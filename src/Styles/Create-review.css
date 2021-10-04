@@ -1,13 +1,13 @@
 .create-review {
   width: 100vw;
-  height: 75vh;
+  min-height: 75vh;
   top: 25vh;
   background-color: var(--secondary-color-light);
   position: absolute;
   display: grid;
   text-align: center;
   grid-template-columns: 100%;
-  grid-template-rows: 15% auto;
+  grid-template-rows: 15% auto 10vh;
   justify-content: center;
 
   grid-template-areas:
@@ -80,4 +80,16 @@
   position: absolute;
   bottom: 0;
   height: 1rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .create-review__form {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .create-review__form {
+    width: 40%;
+  }
 }

@@ -150,7 +150,6 @@ const SingleReview = ({
           Submit
         </Button>
       </form>
-      <div> </div>
       <ul className='single-review__comments-list'>
         {comments.map((comment) => {
           return (
