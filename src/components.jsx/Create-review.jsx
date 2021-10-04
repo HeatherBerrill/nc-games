@@ -25,7 +25,6 @@ const CreateReview = ({
   const [designer, setDesigner] = useState('');
   const [body, setBody] = useState('');
   const [img, setImg] = useState('');
-
   const history = useHistory();
 
   const handleSubmit = (event) => {
@@ -44,6 +43,7 @@ const CreateReview = ({
       setReviews((currReviews) => {
         return [...currReviews, reviewFromApi];
       });
+
       history.push('/reviews');
       setIsLoading(false);
       setTitle('');
@@ -116,7 +116,7 @@ const CreateReview = ({
           <option value='dexterity'> Dexterity </option>
           <option value='engine-building'> Engine-building </option>
           <option value='hidden-roles'> Hidden-roles </option>
-          <option value='push your luck'> Push your luck </option>
+          <option value='push-your-luck'> Push your luck </option>
           <option value='roll and write'> Role and write </option>
           <option value='strategy'> Strategy </option>
         </select>
