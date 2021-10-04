@@ -43,7 +43,7 @@
   background-color: var(--secondary-color-lightest);
   border-radius: 5px;
   padding: 1rem;
-  margin: 1rem auto;
+  margin-top: 1rem;
   text-align: left;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -94,8 +94,14 @@
 
 @media only screen and (min-width: 700px) {
   .reviews__single {
-    width: 60vw;
-    padding-left: 5rem;
+    width: 50vw;
+    padding-left: 3rem;
+    margin: 1rem auto;
+    margin-top: 2rem;
+  }
+
+  .reviews__list {
+    padding-left: 0;
   }
 }
 
@@ -111,7 +117,7 @@
 
   .reviews__list {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
   }
