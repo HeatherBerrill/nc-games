@@ -40,6 +40,6 @@ https://github.com/HeatherBerrill/nc-games
 - install dependencies by doing a general npm install
   -- this will install all modules listed as dependencies in the package.json.
 
-  This project was created with React version 17.0.2. Material UI has been used for specific styling such as buttons, spinners and icons. The styling layout is a mixture of flex-box and CSS grid.
+  This project was created with React version 17.0.2. Material UI has been used for specific styling such as buttons, spinners and icons. It has been designed mobile first. The styling layout is a mixture of flex-box and CSS grid.
 
 Enjoy :)
