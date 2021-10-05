@@ -13,13 +13,7 @@ import rollandwrite from '../Images/rollandwrite.jpg';
 import Footer from './Footer';
 import { Button, CircularProgress } from '@mui/material';
 
-const CreateReview = ({
-  setReviews,
-  reviews,
-  loginUser,
-  isLoading,
-  setIsLoading
-}) => {
+const CreateReview = ({ setReviews, loginUser, isLoading, setIsLoading }) => {
   const [chosenCat, setChosenCat] = useState('');
   const [title, setTitle] = useState('');
   const [designer, setDesigner] = useState('');

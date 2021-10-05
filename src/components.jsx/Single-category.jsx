@@ -7,7 +7,6 @@ import Footer from './Footer';
 import { Button, CircularProgress } from '@mui/material';
 
 const SingleCategory = ({
-  categories,
   setCategories,
   isLoading,
   setIsLoading,

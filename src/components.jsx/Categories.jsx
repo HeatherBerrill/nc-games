@@ -34,12 +34,7 @@ const Categories = ({ categories, setCategories, isLoading, setIsLoading }) => {
             <li className='cat__item' key={category.slug}>
               <h4 className='cat__name'> {category.slug}</h4>
               <Link to={`/categories/${category.slug}`} className='btn_link'>
-                <Button
-                  //  className='btn categories__btn'
-                  variant='contained'
-                  color='primary'
-                  size='small'
-                >
+                <Button variant='contained' color='primary' size='small'>
                   Read Category Reviews
                 </Button>
               </Link>

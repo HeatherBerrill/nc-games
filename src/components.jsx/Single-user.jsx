@@ -6,7 +6,7 @@ import { getSingleUser } from '../api';
 import Footer from './Footer';
 import { Button, CircularProgress } from '@mui/material';
 
-const SingleUser = ({ users, isLoading, setIsLoading }) => {
+const SingleUser = ({ isLoading, setIsLoading }) => {
   const { username } = useParams();
   const [user, setUser] = useState({});
 
@@ -46,8 +46,7 @@ const SingleUser = ({ users, isLoading, setIsLoading }) => {
           color='primary'
           size='small'
         >
-          {' '}
-          Back{' '}
+          Back
         </Button>
       </Link>
       <Footer className='single-user__footer' />

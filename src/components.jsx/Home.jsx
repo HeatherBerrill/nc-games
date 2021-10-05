@@ -2,12 +2,10 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Home.css';
 import '../Styles/index.css';
-import Footer from './Footer';
 import { getVotedReviews } from '../api';
 import { Button, CircularProgress } from '@mui/material';
-import background from '../Images/outline2.jpg';
 
-const Home = ({ isLoading, setIsLoading, setReviews, reviews }) => {
+const Home = ({ isLoading, setIsLoading, setReviews }) => {
   useEffect(() => {
     setIsLoading(true);
     getVotedReviews().then((reviews) => {
